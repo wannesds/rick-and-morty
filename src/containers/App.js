@@ -12,7 +12,7 @@ class App extends Component {
       chars: [],
       info: [],
       fPage: '', // Futuristic Page
-      page: 1 //temp
+      page: 1  // current Page
     }
   }
 
@@ -28,6 +28,8 @@ class App extends Component {
       fetch(this.state.fPage)
       .then(response => response.json())
       .then(character => this.setState({ chars: character.results, info: character.info}));
+
+      this.setState({page: this.state.fPage.substr(48, this.state.fPage.length)})
       console.log(this.state.info);
     }
   }
@@ -38,8 +40,8 @@ class App extends Component {
     return (
       <div>
         <ChangePage 
-          prevPage={() => this.setState({fPage: this.state.info.prev})} 
-          nextPage={() => this.setState({fPage: this.state.info.next})}
+          prevPage={() => this.setState({fPage: info.prev})} 
+          nextPage={() => this.setState({fPage: info.next})}
           move="Next" 
           info={info}
         />
