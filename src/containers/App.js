@@ -11,8 +11,8 @@ class App extends Component {
     this.state = {
       chars: [],
       info: [],
-      fPage: '', // Futuristic Page
-      page: 1  // current Page
+      fPage: '', // Future Page
+      page: 1  // Current Page
     }
   }
 
@@ -46,7 +46,7 @@ class App extends Component {
           move="Next" 
           info={info}
         />
-        <h2>{page}</h2>
+        <h2>page: {page}/{info.pages}</h2>
         <ErrorBoundry>
           <CardList chars={chars}/>
         </ErrorBoundry> 
