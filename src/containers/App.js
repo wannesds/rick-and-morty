@@ -30,6 +30,7 @@ class App extends Component {
       .then(character => this.setState({ chars: character.results, info: character.info}));
 
       this.setState({page: this.state.fPage.substr(48, this.state.fPage.length)})
+      //show current page
       console.log(this.state.info);
     }
   }
