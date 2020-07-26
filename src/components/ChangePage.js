@@ -1,8 +1,6 @@
 import React from 'react';
 
 const ChangePage = ({prevPage, nextPage, info}) => {    
-
-    console.log(info.prev);
     return (
         <div>
             <button 
@@ -16,7 +14,6 @@ const ChangePage = ({prevPage, nextPage, info}) => {
             >Next</button>
         </div>     
     );
-
 }
 
 export default ChangePage;
