@@ -14,7 +14,7 @@ class App extends Component {
       info: [], 
       fPage: '', // Future Page
       page: 1,  // Current Page (by default 1)
-      testdata: ''
+      query: '' 
     }
   }
 
@@ -41,20 +41,19 @@ class App extends Component {
     }
   }
 
-  onSubmit = (e) => {
-    e.preventDefault()
-    this.setState({testdata: new FormData(e.target)});
-  }
+  // onSubmit = (e) => {
+  //   e.preventDefault()
+  //   this.setState({testdata: new FormData(e.target)});
+  // }
 
 
   render() {
     const {chars, page, info} = this.state;
 
-    console.log(this.state.testdata)
     return (
       
       <div>
-        <Filter onSubmit={this.onSubmit}/>
+        <Filter/>
         <ChangePage 
           prevPage={() => this.setState({fPage: info.prev})} 
           nextPage={() => this.setState({fPage: info.next})}
