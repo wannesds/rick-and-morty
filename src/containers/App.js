@@ -14,12 +14,12 @@ class App extends Component {
       info: [], 
       fPage: '', // Future Page
       page: 1,  // Current Page (by default 1)
-      query: '' 
+      query: ''
     }
   }
 
   componentDidMount() {
-    fetch('https://rickandmortyapi.com/api/character/?status=alive')
+    fetch('https://rickandmortyapi.com/api/character/')
       .then(response => response.json())
       .then(character => this.setState({ chars: character.results, info: character.info}));
      // default fetch
@@ -39,6 +39,17 @@ class App extends Component {
       .then(response => response.json())
       .then(character => this.setState({ chars: character.results, info: character.info}));  
     }
+
+    if (this.state.query !== '') { //gives error when useing name that does not occur in any characters
+      fetch("https://rickandmortyapi.com/api/character/" + this.state.query)
+      .then(response => response.json())
+      .then(character => this.setState({ chars: character.results, info: character.info}));
+      this.setState({query: ''})
+    }
+  }
+
+  onFilterSubmit(fullQuery) {
+    this.setState({query: fullQuery})
   }
 
   // onSubmit = (e) => {
@@ -49,11 +60,10 @@ class App extends Component {
 
   render() {
     const {chars, page, info} = this.state;
-
     return (
       
       <div>
-        <Filter/>
+        <Filter onSubmit={this.onFilterSubmit.bind(this)}/>
         <ChangePage 
           prevPage={() => this.setState({fPage: info.prev})} 
           nextPage={() => this.setState({fPage: info.next})}
