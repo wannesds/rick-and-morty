@@ -5,6 +5,8 @@ import ChangePage from '../components/ChangePage';
 import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
 
+import '../quotes.js';
+
 
 class App extends Component {
   constructor() {
@@ -61,7 +63,9 @@ class App extends Component {
   render() {
     const {chars, page, info} = this.state;
     return (
-      
+      <header>
+    
+      </header>
       <div>
         <Filter onSubmit={this.onFilterSubmit.bind(this)}/>
         <ChangePage 
