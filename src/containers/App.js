@@ -5,7 +5,7 @@ import ChangePage from '../components/ChangePage';
 import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
 
-import '../quotes.js';
+import  {quotes } from '../quotes.js';
 
 
 class App extends Component {
@@ -16,7 +16,8 @@ class App extends Component {
       info: [], 
       fPage: '', // Future Page
       page: 1,  // Current Page (by default 1)
-      query: ''
+      query: '',
+      quotes: quotes
     }
   }
 
@@ -24,10 +25,14 @@ class App extends Component {
     fetch('https://rickandmortyapi.com/api/character/')
       .then(response => response.json())
       .then(character => this.setState({ chars: character.results, info: character.info}));
-     // default fetch
+
+    // fetch('../quotes.js')
+    //   .then(response => response.json())
+    //   .then(quotes => this.setState({ quotes: quotes}));
+    //  // default fetch
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {//use useEffect!!!
     const {fPage, page, info} = this.state;
 
     if (prevState.fPage !== fPage) { //check for changes
@@ -35,7 +40,7 @@ class App extends Component {
         this.setState({page: page - 1})
       } else {
         this.setState({page: page + 1})
-      } 
+      } //this shouldnt be needed for in react!!!
 
       fetch(fPage)
       .then(response => response.json())
@@ -61,10 +66,17 @@ class App extends Component {
 
 
   render() {
-    const {chars, page, info} = this.state;
+    const {chars, page, info, quotes} = this.state;
+
+    console.log(quotes[1])
     return (
+      <fragment>
+
       <header>
-    
+        <div>
+          <p>{quotes[1].quote}</p>
+          <h5>- {quotes[1].name}</h5>
+        </div>
       </header>
       <div>
         <Filter onSubmit={this.onFilterSubmit.bind(this)}/>
@@ -82,7 +94,7 @@ class App extends Component {
         </ErrorBoundry> 
       </div>
 
-      
+      </fragment>
     );
   }
 
