@@ -12,16 +12,28 @@ import Card from '../components/Card';
 function App() {
   const [data, setData] = useState({results: []});
   const [query, setQuery] = useState('Rick');
+  const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch('https://rickandmortyapi.com/api/character/?name=Rick')
-        .then(response => response.json())
-        .then(res => setData(res))
+      setIsLoading(true);
+      setIsError(false);
+
+      try {
+        fetch(url)
+          .then(response => response.json())
+          .then(res => setData(res))
+      } catch (error) {
+        setIsError(true);
+      }
+      
+      setIsLoading(false);
     };
 
     fetchData();
-  },[])
+  },[url])
 
   return (
     <Fragment>
@@ -30,8 +42,16 @@ function App() {
           value={query}
           onChange={event => setQuery(event.target.value)}
         />
+        <button type="button" onClick={() => setUrl(`https://rickandmortyapi.com/api/character/?name=${query}`)}>
+          Search
+        </button>
 
-        <div> 
+        { isError && <div>You fucked up Morty!</div>}
+
+        { isLoading ? (
+          <div>Loading ...</div>
+        ) : (
+          <div> 
             { 
                 data.results.map((c, i) => (
                       <Card
@@ -43,6 +63,7 @@ function App() {
                 ))   
             }
         </div>
+        )}     
     </Fragment>
   )
 }
