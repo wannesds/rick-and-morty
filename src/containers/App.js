@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import Card from '../components/Card';
-// import CardList from '../components/CardList';
+//import CardList from '../components/CardList';
 // import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
 // import Filter from '../components/Filter';
@@ -11,7 +11,7 @@ import Card from '../components/Card';
 
 function App() {
   const [data, setData] = useState({results: []});
-  const [query, setQuery] = useState('Rick');
+  const [query, setQuery] = useState('');
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -28,6 +28,8 @@ function App() {
       } catch (error) {
         setIsError(true);
       }
+      // if data.results.error === true { console.log("succesly failed")}
+      
       
       setIsLoading(false);
     };
@@ -46,24 +48,25 @@ function App() {
           Search
         </button>
 
-        { isError && <div>You fucked up Morty!</div>}
+        {/* { isError && <div>You fucked up Morty!</div> } */}
 
-        { isLoading ? (
-          <div>Loading ...</div>
-        ) : (
-          <div> 
-            { 
-                data.results.map((c, i) => (
-                      <Card
-                        key={i} 
-                        id={c.id} 
-                        name={c.name} 
-                        status={c.status}
-                      />
-                ))   
-            }
-        </div>
-        )}     
+        { isLoading ? ( <div>Loading ...</div> ) 
+                    : ( 
+                        data.error || isError ? ( <div>You fucked up Morty!</div> ) //
+                                : ( <div>
+                                
+                                    { data.results.map((c, i) => (
+                                        <Card
+                                          key={i} 
+                                          id={c.id} 
+                                          name={c.name} 
+                                          status={c.status}
+                                        />
+                                      ))   
+                                    } </div> ) 
+                      )
+                                    
+        }     
     </Fragment>
   )
 }
