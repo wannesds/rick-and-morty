@@ -1,17 +1,17 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import Card from '../components/Card';
-//import CardList from '../components/CardList';
+import CardList from '../components/CardList';
 // import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
-// import Filter from '../components/Filter';
+import Filter from '../components/Filter';
 
 // import  {quotes } from '../quotes.js';
 
 
 function App() {
   const [data, setData] = useState({results: []});
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -39,33 +39,24 @@ function App() {
 
   return (
     <Fragment>
-        <input
+        {/* <input
           type="text"
           value={query}
           onChange={event => setQuery(event.target.value)}
         />
         <button type="button" onClick={() => setUrl(`https://rickandmortyapi.com/api/character/?name=${query}`)}>
           Search
-        </button>
+        </button> */}
 
-        {/* { isError && <div>You fucked up Morty!</div> } */}
+        <Filter onSubmit={(query) => setUrl(`https://rickandmortyapi.com/api/character/${query}`)}/>
 
-        { isLoading ? ( <div>Loading ...</div> ) 
-                    : ( 
-                        data.error || isError ? ( <div>You fucked up Morty!</div> ) //
-                                : ( <div>
-                                
-                                    { data.results.map((c, i) => (
-                                        <Card
-                                          key={i} 
-                                          id={c.id} 
-                                          name={c.name} 
-                                          status={c.status}
-                                        />
-                                      ))   
-                                    } </div> ) 
-                      )
-                                    
+        { isLoading ? 
+          ( <div>Loading ...</div> ) : 
+            ( 
+              data.error || isError ? 
+                ( <div>You fucked up Morty!</div> ) :
+                  (<CardList chars={data.results}/>)  
+            )                          
         }     
     </Fragment>
   )
