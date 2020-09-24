@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
-import Card from '../components/Card';
+// import Card from '../components/Card';
 import CardList from '../components/CardList';
 // import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
@@ -13,6 +13,7 @@ function App() {
   const [data, setData] = useState({results: []});
   // const [query, setQuery] = useState('');
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
+  // const urlRef = useRef('https://rickandmortyapi.com/api/character/')
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -48,8 +49,8 @@ function App() {
           Search
         </button> */}
 
-        <Filter onSubmit={(query) => setUrl(`https://rickandmortyapi.com/api/character/${query}`)}/>
-
+        <Filter getQuery={(query) => setUrl(`https://rickandmortyapi.com/api/character/${query}`)}/>
+        {console.log("url test:" + url)}
         { isLoading ? 
           ( <div>Loading ...</div> ) : 
             ( 

@@ -1,25 +1,39 @@
-import React, { useEffect, useState } from 'react';
+// import React, { Component } from 'react';
+import React, {useState} from 'react';
 
+const Filter = ({getQuery}) => {   
+    const [query, setQuery] = useState('')
+    const [name , setName] = useState('')
+    const [status, setStatus] = useState('')
+    const [gender, setGender] = useState('')
+    // const nameRef = useRef()
+    // const statusRef = useRef()
+    // const genderRef = useRef()
+    // const queryRef = useRef()
 
-function Filter() {
-    const [query, setQuery] = useState('');
-    const [name , setName] = useState('');
-    const [status, setStatus] = useState('');
-    const [gender, setGender] = useState('');
+    // useEffect(() => {
+    //     setQuery(
+    //             "?name=" + name +
+    //             "&status=" + status +
+    //             "&gender=" + gender
+    //             );
+    // }, [name, gender, status])
 
-    useEffect(() => {
+    const makeQuery = e => {
+        e.preventDefault();  
         setQuery(
-                "?name=" + name +
-                "&status=" + status +
-                "&gender=" + gender
-                );
-    }, [name, gender, status])
+                        "?name=" + name +
+                        "&status=" + status +
+                        "&gender=" + gender
+                        );
+        getQuery(query);
+    }
 
-    console.log(name + status + gender + query);
+    console.log("query test:" + query);
 
     return (
-        <form>
-            <input name="name" type='text' placeholder='search by name' onChange={e => setName(e.target.value)}/>
+        <form onSubmit={makeQuery}>
+            <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name' />
             <select name="status" onChange={e => setStatus(e.target.value)}>
                 <option value="">-</option>
                 <option value="alive">Alive</option>
@@ -30,56 +44,66 @@ function Filter() {
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
-            <button>Wubba Lubba Dub Dub</button>
+            <button type="submit">Wubba Lubba Dub Dub</button>
         </form>
 
     );
 }
-
-
-export default Filter;
 
 // class Filter extends Component { //get all species and locations from main api to put in form
 //     constructor() {
         
 //         super();
 //         this.state = {
-//             fullQuery: '',
+//             query: '',
 //             name: '',
-//             status: 'alive',
-//             gender: 'male',
+//             status: '',
+//             gender: ''
 //         }  
+//         this.handleChange = this.handleChange.bind(this);
+//         this.submitChange = this.submitChange.bind(this);
 //     }
-
 //     handleChange = (event) => {
 //         let nam = event.target.name;
 //         let val = event.target.value;
 //         this.setState({[nam]: val});
+       
+//         console.log(1 + this.state.status + this.state.gender + event.target.value + event.target.name);
+//         this.submitChange();
+       
 //     }
-
-//     handleSubmit = (event) => {  
-//         this.setState({fullQuery: 
-//             "?name=" + this.state.name
+//     submitChange() {
+//         this.setState({query: 
+//             "name=" + this.state.name
 //             + "&status=" + this.state.status
 //             + "&gender=" + this.state.gender});
-//         this.props.onChange(this.state.fullQuery);
+//         this.props.onUpdate(this.state.query);
+
+//         console.log(this.state.status + this.state.gender);
 //     }
 
 
-// render() {
+    
+
+// render() {console.log("q test:" + this.state.query);
 //     return (
+        
 //         <form>
 //             <input name="name" type='text' placeholder='search by name' onChange={this.handleChange}/>
-//             <select name="status" onChange={this.handleChange}>
+//             <select name="status" onChange={(e) => this.handleChange(e)}>
+//                 <option value="">-</option>
 //                 <option value="alive">Alive</option>
 //                 <option value="dead">Dead</option>
 //             </select>
 //             <select name="gender" onChange={this.handleChange}>
+//                 <option value="">-</option>
 //                 <option value="male">Male</option>
 //                 <option value="female">Female</option>
 //             </select>
-//             {/* <button>Wubba Lubba Dub Dub</button> */}
+//             <button onClick={this.submitChange}>Wubba Lubba Dub Dub</button>
 //         </form>
 //     );
 //     }
 // }
+
+export default Filter;
