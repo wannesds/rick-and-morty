@@ -1,38 +1,25 @@
-// import React, { Component } from 'react';
+
 import React, {useState} from 'react';
 
-const Filter = ({getQuery}) => {   
-    const [query, setQuery] = useState('')
+function Filter({getQuery}) {   
+
+   
     const [name , setName] = useState('')
     const [status, setStatus] = useState('')
     const [gender, setGender] = useState('')
-    // const nameRef = useRef()
-    // const statusRef = useRef()
-    // const genderRef = useRef()
-    // const queryRef = useRef()
-
-    // useEffect(() => {
-    //     setQuery(
-    //             "?name=" + name +
-    //             "&status=" + status +
-    //             "&gender=" + gender
-    //             );
-    // }, [name, gender, status])
-
+  
     const makeQuery = e => {
         e.preventDefault();  
-        setQuery(
-                        "?name=" + name +
-                        "&status=" + status +
-                        "&gender=" + gender
-                        );
-        getQuery(query);
+        var query = "?name=" + name +
+                    "&status=" + status +
+                    "&gender=" + gender ;
+
+        console.log("makequery" + query) 
+           
+        getQuery(query); //query data gets send back to parent
     }
-
-    console.log("query test:" + query);
-
     return (
-        <form onSubmit={makeQuery}>
+        <form>
             <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name' />
             <select name="status" onChange={e => setStatus(e.target.value)}>
                 <option value="">-</option>
@@ -44,11 +31,23 @@ const Filter = ({getQuery}) => {
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
-            <button type="submit">Wubba Lubba Dub Dub</button>
+            <button onClick={makeQuery}>Wubba Lubba Dub Dub</button>
         </form>
 
     );
 }
+  // const nameRef = useRef()
+    // const statusRef = useRef()
+    // const genderRef = useRef()
+    // const queryRef = useRef()
+
+    // useEffect(() => {
+    //     setQuery(
+    //             "?name=" + name +
+    //             "&status=" + status +
+    //             "&gender=" + gender
+    //             );
+    // }, [name, gender, status])
 
 // class Filter extends Component { //get all species and locations from main api to put in form
 //     constructor() {
