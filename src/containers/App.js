@@ -5,70 +5,66 @@ import CardList from '../components/CardList';
 import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
-
+import Header from '../components/Header';
 // import  {quotes } from '../quotes.js';
 
 
 function App() {
-  const [data, setData] = useState({results: [], info: []});
+  const [data, setData] = useState({results: [], info: []})
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const ar = url.split("=",2); //extracts page number
+  const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
+  let pArr = url.split("=",2); //extracts page number
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
-      setIsError(false);
+      setIsLoading(true)
+      setIsError(false)
 
       try {
         fetch(url)
           .then(response => response.json())
           .then(res => setData(res))
       } catch (error) {
-        setIsError(true);
+        setIsError(true)
       } 
-      setIsLoading(false);
-    };
+      setIsLoading(false)
+    }
 
-    fetchData();
+    fetchData()
   },[url])
 
 
   return (
-
     <Fragment>
-
-      
-      {/* {^ if on first page (no num found) , then gives '1' as default} */}
-
-      
+      <Header/>
 
       <Filter getQuery={(e) => setUrl(`https://rickandmortyapi.com/api/character/${e}`)}/>
 
-        {console.log("url test:" + url)}
+      {console.log(pArr)}
 
-        { isLoading ? 
-          ( <div>Loading ...</div> ) : 
-            ( 
-              data.error || isError ? 
-                ( <div>You fucked up Morty!</div> ) :
-                  (
-                    <Fragment>
-                      <ChangePage 
-                        prevPage={() => setUrl(data.info.prev)} 
-                        nextPage={() => setUrl(data.info.next)}
-                        info={data.info}
-                      />
-                      <p>{ar[1] !== Number ? '1' : ar[1]} / {data.info.pages}</p>
-                      <CardList chars={data.results}/>
-                    </Fragment>
-                  )  
-            )  
-        }
-        {/* this error check tree could be made into a component like errorboundry? or not?      */}
+      {/* check first if loading, then check if error, then show content */}
+      { isLoading ? <div>Loading ...</div> : 
+        data.error || isError ? <div>You fucked up Morty!</div> :
+          <Fragment>
+
+            <ChangePage 
+              prevPage={() => setUrl(data.info.prev)} 
+              nextPage={() => setUrl(data.info.next)}
+              info={data.info}
+            />
+
+            {/* {if not on first page, show page num , else default 1} */}
+            <p>{data.info.prev ? pArr[1].substring(0,1) : '1'} / {data.info.pages}</p> 
+            {/* !!change substring into something to cut of just string or just keep int */}
+            <CardList chars={data.results}/>
+
+          </Fragment>     
+      }
+
     </Fragment>
   )
+
 }
 
 

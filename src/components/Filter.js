@@ -8,18 +8,16 @@ function Filter({getQuery}) {
     const [gender, setGender] = useState('')
   
     const makeQuery = e => {
-        e.preventDefault();  
+        e.preventDefault()  
         var query = "?name=" + name +
                     "&status=" + status +
                     "&gender=" + gender 
         ;
-        console.log("makequery" + query)  
-
-        getQuery(query); //query data gets send back to parent
+        getQuery(query) //query data gets send back to parent
     }
     return (
         <form>
-            <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name' />
+            <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name'/>
             <select name="status" onChange={e => setStatus(e.target.value)}>
                 <option value="">-</option>
                 <option value="alive">Alive</option>
