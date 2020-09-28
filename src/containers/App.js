@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
 // import Card from '../components/Card';
 import CardList from '../components/CardList';
-// import ChangePage from '../components/ChangePage';
+import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
 
@@ -10,12 +10,11 @@ import Filter from '../components/Filter';
 
 
 function App() {
-  const [data, setData] = useState({results: []});
-  // const [query, setQuery] = useState('');
+  const [data, setData] = useState({results: [], info: []});
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
-  // const urlRef = useRef('https://rickandmortyapi.com/api/character/')
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const ar = url.split("=",2); //extracts page number
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,37 +27,46 @@ function App() {
           .then(res => setData(res))
       } catch (error) {
         setIsError(true);
-      }
-      // if data.results.error === true { console.log("succesly failed")}
-      
-      
+      } 
       setIsLoading(false);
     };
 
     fetchData();
   },[url])
 
-  return (
-    <Fragment>
-        {/* <input
-          type="text"
-          value={query}
-          onChange={event => setQuery(event.target.value)}
-        />
-        <button type="button" onClick={() => setUrl(`https://rickandmortyapi.com/api/character/?name=${query}`)}>
-          Search
-        </button> */}
 
-        <Filter getQuery={(query) => setUrl(`https://rickandmortyapi.com/api/character/${query}`)}/>
+  return (
+
+    <Fragment>
+
+      
+      {/* {^ if on first page (no num found) , then gives '1' as default} */}
+
+      
+
+      <Filter getQuery={(e) => setUrl(`https://rickandmortyapi.com/api/character/${e}`)}/>
+
         {console.log("url test:" + url)}
+
         { isLoading ? 
           ( <div>Loading ...</div> ) : 
             ( 
               data.error || isError ? 
                 ( <div>You fucked up Morty!</div> ) :
-                  (<CardList chars={data.results}/>)  
-            )                          
-        }     
+                  (
+                    <Fragment>
+                      <ChangePage 
+                        prevPage={() => setUrl(data.info.prev)} 
+                        nextPage={() => setUrl(data.info.next)}
+                        info={data.info}
+                      />
+                      <p>{ar[1] !== Number ? '1' : ar[1]} / {data.info.pages}</p>
+                      <CardList chars={data.results}/>
+                    </Fragment>
+                  )  
+            )  
+        }
+        {/* this error check tree could be made into a component like errorboundry? or not?      */}
     </Fragment>
   )
 }

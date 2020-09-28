@@ -1,9 +1,8 @@
 
 import React, {useState} from 'react';
+import './Filter.css';
 
-function Filter({getQuery}) {   
-
-   
+function Filter({getQuery}) {    
     const [name , setName] = useState('')
     const [status, setStatus] = useState('')
     const [gender, setGender] = useState('')
@@ -12,10 +11,10 @@ function Filter({getQuery}) {
         e.preventDefault();  
         var query = "?name=" + name +
                     "&status=" + status +
-                    "&gender=" + gender ;
+                    "&gender=" + gender 
+        ;
+        console.log("makequery" + query)  
 
-        console.log("makequery" + query) 
-           
         getQuery(query); //query data gets send back to parent
     }
     return (

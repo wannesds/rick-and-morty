@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import './CardList.css';
 
 function CardList({ chars }) {
     return(
@@ -12,6 +13,10 @@ function CardList({ chars }) {
                         id={chars[i].id} 
                         name={chars[i].name} 
                         status={chars[i].status}
+                        species={chars[i].species}
+                        gender={chars[i].gender}
+                        origin={chars[i].origin}
+                        location={chars[i].location}
                         />
                     );
                 })   
