@@ -1,16 +1,16 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import  {quotes} from '../quotes.js';
 import './Header.css';
 
 const Header = () => {
-    let m = Math.trunc(Math.random() * quotes.length);
-    const quote = quotes[1].name
+    let id = Math.trunc(Math.random() * quotes.length);
 
     return (
-        <Fragment>
-            <h1>{quote}</h1>
-            <p>{m}</p> 
-        </Fragment>  
+        <div className="quoteBox pa2">
+            <p className="f3 i">{quotes[id].quote}</p>
+            {/* <img className="" alt='Character' src={quotes[id].picture} width='50px'/> */}
+            <p className="f5 pl2 mb2 dib">- {quotes[id].name}</p>
+        </div>  
     )
 }
 

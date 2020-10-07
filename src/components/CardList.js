@@ -4,7 +4,7 @@ import './CardList.css';
 
 function CardList({ chars }) {
     return(
-        <div>
+        <div className="CardList">
            { 
                 chars.map((char, i) => {
                     return(

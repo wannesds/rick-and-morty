@@ -36,7 +36,7 @@ function App() {
 
 
   return (
-    <Fragment>
+    <div className="appContainer">
       <Header/>
 
       <Filter getQuery={(e) => setUrl(`https://rickandmortyapi.com/api/character/${e}`)}/>
@@ -46,7 +46,7 @@ function App() {
       {/* check first if loading, then check if error, then show content */}
       { isLoading ? <div>Loading ...</div> : 
         data.error || isError ? <div>You fucked up Morty!</div> :
-          <Fragment>
+          <div className="cardListContainer">
 
             <ChangePage 
               prevPage={() => setUrl(data.info.prev)} 
@@ -57,12 +57,13 @@ function App() {
             {/* {if not on first page, show page num , else default 1} */}
             <p>{data.info.prev ? pArr[1].substring(0,1) : '1'} / {data.info.pages}</p> 
             {/* !!change substring into something to cut of just string or just keep int */}
-            <CardList chars={data.results}/>
-
-          </Fragment>     
+            <div>
+              <CardList chars={data.results}/>
+            </div>
+          </div>     
       }
 
-    </Fragment>
+    </div>
   )
 
 }
