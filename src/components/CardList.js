@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from './Card';
+import './CardList.css';
 
-const CardList = ({ chars }) => {
+function CardList({ chars }) {
     return(
-        <div>
+        <div className="CardList">
            { 
                 chars.map((char, i) => {
                     return(
@@ -12,6 +13,10 @@ const CardList = ({ chars }) => {
                         id={chars[i].id} 
                         name={chars[i].name} 
                         status={chars[i].status}
+                        species={chars[i].species}
+                        gender={chars[i].gender}
+                        origin={chars[i].origin}
+                        location={chars[i].location}
                         />
                     );
                 })   

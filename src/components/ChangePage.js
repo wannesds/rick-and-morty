@@ -2,7 +2,8 @@ import React from 'react';
 
 const ChangePage = ({prevPage, nextPage, info}) => {    
     return (
-        <div>
+        <div> 
+        {/* this can be written shorter */}
             <button 
             onClick={prevPage} 
             hidden={!info.prev? true:false}
