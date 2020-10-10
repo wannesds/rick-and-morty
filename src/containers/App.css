@@ -1,12 +1,75 @@
 body {
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(19, 19, 19)
 }
 
 .App {
-    background-image: url(../rick_and_morty_by_sawuinhaff.png);
-    background-size: auto;
+    background-image: url(../rick_and_morty_by_sawuinhaff_horizontal.png);
+    background-size: contain; 
+    background-repeat: repeat-y;
 }
 
+.QuoteBox {
+    background-color: rgba(24, 24, 24, 0.95);
+    color:rgb(13, 184, 107); 
+    padding: 0.5rem;
+    height: auto;
+}
+
+.QuoteBox p {
+    margin: auto 0 5px 10px;
+}
+
+
+form { /*filter*/
+    max-width: 40rem;
+    margin:5px auto;
+    padding: 10px;
+    color: rgb(34, 189, 116);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(32, 32, 32, 0.699);
+    border-radius: 2rem;
+}
+
+select, input, button, .ChangePageBox p {
+    padding: 8px;
+    color:rgb(13, 184, 107); 
+    background-color: rgba(29, 29, 29);
+    border-color: rgba(0, 31, 16);
+    border-radius: 2rem;
+    border-style: solid;
+    box-decoration-break: slice;
+
+}
+
+textarea:focus, input:focus, button:focus, select:focus{
+    outline: none;
+}
+
+button {
+    border-color: rgb(7, 100, 58); 
+}
+button:hover, input:hover, select:hover {
+    background-color: rgba(39, 39, 39);
+    border-color: rgb(13, 184, 107);
+    box-shadow: inset rgba(24, 24, 24, 0.733) 2px 2px 10px;
+}
+
+.ChangePageBox {
+    margin: auto;
+    width: 20rem;
+    padding: 10px;
+    display: flex;
+   
+    background-color: rgba(32, 32, 32, 0.699);
+    border-radius: 2rem;
+}
+.ChangePageBox button{
+    width: 80px; 
+}
+.ChangePageBox p {
+    margin: auto;
+}
 
 .CardListBox {
     width: 96vw;
@@ -31,47 +94,15 @@ body {
     /* should make width fixed amount at small or big screensizes*/   
 }
 
-form {
-    margin: 5px auto;
-    color: rgb(34, 189, 116);
-    display: flex;
-    justify-content: center;
+.FooterBox {
+    margin: 0 auto;
+    background-color:rgba(24, 24, 24, 0.95);
+    height: 10rem;
 }
 
-form select, input, button {
-    color:rgb(13, 184, 107); 
-    background-color: rgba(29, 29, 29, 0.918);
-    border-color: rgba(0, 31, 16, 0.733);
-    border-radius: 15px;
-    border-style: groove;
-    margin: auto;
-    box-decoration-break: slice;
-}
-
-.QuoteBox {
-    background-color: rgba(24, 24, 24, 0.952);
-    color:rgb(13, 184, 107); 
-    padding: 10px;
-}
-
-.QuoteBox p {
-    margin: auto 0 5px 10px;
-}
-
-.ChangePageBox {
-    margin: auto;
-    width: 400px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-}
-.ChangePageBox button{
-    height: 30px;
-    width: 80px;
-    border-radius: 5px;
-}
-.ChangePageBox p {
-    width: 80px;
-    text-align: center;
-    color: black;
+@media (max-width:900px){  
+    .App {
+        background-image: url(../rick_and_morty_by_sawuinhaff_vertical.png);
+        background-size: auto;
+    }        
 }

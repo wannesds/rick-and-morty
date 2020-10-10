@@ -1,9 +1,10 @@
 import React from 'react';
 import  {quotes} from '../quotes.js';
-import './Header.css';
+
 
 const Header = () => {
-    let id = Math.trunc(Math.random() * quotes.length);
+
+    const id = Math.trunc(Math.random() * quotes.length);
 
     return (
         <div className="QuoteBox">
