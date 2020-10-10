@@ -13,7 +13,7 @@ const ChangePage = ({prevPage, nextPage, info, url}) => {
             </button>
 
             <p>
-            {info.prev ? r[1] : '1'}
+            {!info.prev ? '1' : r[1]}
                 / 
             {info.pages}
             </p>
