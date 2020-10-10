@@ -20,13 +20,13 @@ function Filter({getQuery}) {
             <input className="bw1 ma1 pa1 ba b--green" name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name'/>
             <select className="bw1 ma1 pa1" name="status" onChange={e => setStatus(e.target.value)}>
                 <option value="">-</option>
-                <option value="alive">Alive</option>
-                <option value="dead">Dead</option>
+                <option value="alive">alive</option>
+                <option value="dead">dead</option>
             </select>
             <select className="bw1 ma1 pa1" name="gender" onChange={e => setGender(e.target.value)}>
                 <option value="">-</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
             </select>
             <button className="bw1 ma1 pa1" onClick={makeQuery}>Wubba Lubba Dub Dub</button>
         </form>

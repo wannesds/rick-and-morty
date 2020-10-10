@@ -1,38 +1,77 @@
 body {
-    background-color:rgb(19, 19, 19);
-    
+    background-color:rgb(255, 255, 255);
 }
 
-div {
+.App {
+    background-image: url(../rick_and_morty_by_sawuinhaff.png);
+    background-size: auto;
+}
+
+
+.CardListBox {
+    width: 96vw;
     margin: 0 auto;
-}
-.appContainer {
-    background-color: rgb(29, 29, 29);
-    width: 95vw;  
+    padding: 0 auto;
+    color: rgb(34, 189, 116);    
 }
 
-.card {
-    background-color:rgb(46, 46, 46);
-    color:rgb(34, 189, 116);
-    width: 22vw;
-    
+.CardList {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.cardListContainer {
-    width: 100vw;
-    color: rgb(34, 189, 116);
-}
-
-.cardListContainer div {
-
+.Card {
+    background-color:rgba(29, 29, 29, 0.918);
+    color:rgb(13, 184, 107); 
+    width: 220px;
+    /* max-width: 300px;
+    min-width: 60px; */
+    /* should make width fixed amount at small or big screensizes*/   
 }
 
 form {
+    margin: 5px auto;
     color: rgb(34, 189, 116);
+    display: flex;
+    justify-content: center;
 }
 
+form select, input, button {
+    color:rgb(13, 184, 107); 
+    background-color: rgba(29, 29, 29, 0.918);
+    border-color: rgba(0, 31, 16, 0.733);
+    border-radius: 15px;
+    border-style: groove;
+    margin: auto;
+    box-decoration-break: slice;
+}
 
-.quoteBox {
-    background-color: rgb(43, 43, 43);
-    color:rgb(34, 189, 116);
+.QuoteBox {
+    background-color: rgba(24, 24, 24, 0.952);
+    color:rgb(13, 184, 107); 
+    padding: 10px;
+}
+
+.QuoteBox p {
+    margin: auto 0 5px 10px;
+}
+
+.ChangePageBox {
+    margin: auto;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.ChangePageBox button{
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}
+.ChangePageBox p {
+    width: 80px;
+    text-align: center;
+    color: black;
 }
