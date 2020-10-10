@@ -98,7 +98,7 @@ export const quotes = [
     },
     {
         id: 17,
-        name: "Rick Sanchez",
+        name: "Pickle Rick",
         quote: "“I'M A PICKLE! I'm pickle Riiiiiick!”",
         picture: "https://rickandmortyapi.com/api/character/avatar/265.jpeg"
     },

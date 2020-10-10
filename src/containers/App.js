@@ -1,26 +1,22 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-// import Card from '../components/Card';
 import CardList from '../components/CardList';
 import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
 import Header from '../components/Header';
-// import  {quotes } from '../quotes.js';
-
+import Footer from '../components/Footer';
 
 function App() {
   const [data, setData] = useState({results: [], info: []})
   const [url, setUrl] = useState('https://rickandmortyapi.com/api/character/')
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
-  let pArr = url.split("=",2); //extracts page number
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true)
       setIsError(false)
-
       try {
         fetch(url)
           .then(response => response.json())
@@ -30,39 +26,39 @@ function App() {
       } 
       setIsLoading(false)
     }
-
     fetchData()
   },[url])
 
-
   return (
-    <div className="appContainer">
+    <div className="App">
       <Header/>
 
-      <Filter getQuery={(e) => setUrl(`https://rickandmortyapi.com/api/character/${e}`)}/>
-
-      {console.log(pArr)}
+      <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
 
       {/* check first if loading, then check if error, then show content */}
       { isLoading ? <div>Loading ...</div> : 
         data.error || isError ? <div>You fucked up Morty!</div> :
-          <div className="cardListContainer">
+          <div className="CardListBox">
 
             <ChangePage 
               prevPage={() => setUrl(data.info.prev)} 
               nextPage={() => setUrl(data.info.next)}
               info={data.info}
+              url={url}
             />
 
-            {/* {if not on first page, show page num , else default 1} */}
-            <p>{data.info.prev ? pArr[1].substring(0,1) : '1'} / {data.info.pages}</p> 
-            {/* !!change substring into something to cut of just string or just keep int */}
-            <div>
-              <CardList chars={data.results}/>
-            </div>
+            <CardList  chars={data.results}/>
+
+            <ChangePage 
+              prevPage={() => setUrl(data.info.prev)} 
+              nextPage={() => setUrl(data.info.next)}
+              info={data.info}
+              url={url}
+            />
           </div>     
       }
 
+      <Footer/>
     </div>
   )
 

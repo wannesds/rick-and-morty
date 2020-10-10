@@ -1,9 +1,8 @@
 import React from 'react';
-import './Card.css';
 
 const Card = ({id, name, status, species, gender, origin, location}) => {
     return (
-        <div className='card dib grow br3 pa3 ma2 bw2 shadow-5' >
+        <div className='Card dib grow br3 pa3 ma2 bw2 shadow-3' >
             <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`} width='100px'/>
             <div>
                 <h2>{name}</h2> 
