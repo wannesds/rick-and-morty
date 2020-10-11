@@ -12,6 +12,7 @@ const Card = ({id, name, status, species, gender, origin, location}) => {
                 <p>{species}</p>
                 <p>Origin: {origin.name}</p>
                 <p>Location: {location.name}</p>
+                {/*!!!!! hide more !!!!!*/}
             </div>
         </div>
     );
