@@ -36,8 +36,8 @@ function App() {
       <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
 
       {/* check first if loading, then check if error, then show content */}
-      { isLoading ? <div>Loading ...</div> : 
-        data.error || isError ? <div>You fucked up Morty!</div> :
+      { isLoading ? <div className="ErrorBox">Loading ...</div> : 
+        data.error || isError ? <div className="ErrorBox">You fucked up Morty!</div> :
           <div className="CardListBox">
 
             <ChangePage 

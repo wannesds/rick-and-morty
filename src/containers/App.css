@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(19, 19, 19)
+    background-color:rgb(19, 19, 19);
 }
 
 .App {
@@ -12,12 +12,11 @@ body {
     background-color: rgba(24, 24, 24, 0.95);
     color:rgb(13, 184, 107); 
     padding: 0.5rem;
-    height: 6rem;
     margin: auto;
 }
 
 .QuoteBox p {
-    margin: auto 0 5px 10px;
+    margin:auto 0 auto 10px;
 }
 
 
@@ -95,10 +94,27 @@ button:hover, input:hover, select:hover {
     /* should make width fixed amount at small or big screensizes*/   
 }
 
+.ErrorBox {
+    width:100vw;
+    height: 31rem;
+}
+
 .FooterBox {
-    margin: 0 auto;
     background-color:rgba(24, 24, 24, 0.95);
-    height: 10rem;
+    padding: 10px 0 20px 0;
+    margin: 10px auto 0 auto;
+}
+
+.FooterBox p {
+    color:rgb(8, 134, 77);
+    text-align: center;
+    padding: 3px;
+    margin: 5px auto;
+}
+
+.FooterBox p span {
+    font-style: italic; 
+    color:rgb(13, 184, 107);
 }
 
 @media (max-width:900px){  
