@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ChangePage = ({prevPage, nextPage, info, url}) => { 
-    const r = url.split("=",2);   //extracts page number
+const ChangePage = ({prevPage, nextPage, info, url}) => {
+   const r = url.match(/(\d+)/);  //extracts page number
 
     console.log(r)
     return (
@@ -13,7 +13,7 @@ const ChangePage = ({prevPage, nextPage, info, url}) => {
             </button>
 
             <p>
-            {!info.prev ? '1' : r[1]} / {info.pages}
+            {r == null ? '1' : r[0]} / {info.pages}
             </p>
 
             <button 
