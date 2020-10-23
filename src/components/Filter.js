@@ -27,7 +27,7 @@ function Filter({getQuery}) {
                 <option value="male">male</option>
                 <option value="female">female</option>
             </select>
-            <button onClick={makeQuery}>Wubba Lubba Dub Dub</button>
+            <button onClick={makeQuery}>Scan</button>
         </form>
 
     );

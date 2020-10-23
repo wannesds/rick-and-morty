@@ -2,17 +2,12 @@ import React from 'react';
 
 const Card = ({id, name, status, species, gender, origin, location}) => {
     return (
-        <div className='Card dib grow br3 pa3 ma2 bw2 shadow-3' >
+        <div className='Card grow-large' >
             <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`} width='100px'/>
+            <h3>{name}</h3> 
             <div>
-                <h2>{name}</h2> 
-                <p>{status}</p>
-                {/* <p>{id}</p> */}
-                <p>{gender}</p>
-                <p>{species}</p>
-                <p>Origin: {origin.name}</p>
-                <p>Location: {location.name}</p>
-                {/*!!!!! hide more !!!!!*/}
+                <p className='Gender'>{gender}</p>
+                 {status === 'Alive' ? null : <div className='DeadSign'></div>}
             </div>
         </div>
     );
