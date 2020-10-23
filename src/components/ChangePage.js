@@ -1,24 +1,18 @@
 import React from 'react';
 
 const ChangePage = ({prevPage, nextPage, info, url}) => {
-   const r = url.match(/(\d+)/);  //extracts page number
-
-    console.log(r)
+    const pNum = url.match(/(\d+)/);
     return (
         <div className="ChangePageBox">
-            <button 
-            onClick={prevPage} 
-            hidden={!info.prev? true:false}>
+            <button onClick={prevPage} hidden={!info.prev ? true : false}>
             Prev
             </button>
 
             <p>
-            {r == null ? '1' : r[0]} / {info.pages}
+            {pNum === null ? '1' : pNum[0]} / {info.pages}
             </p>
 
-            <button 
-            onClick={nextPage}  
-            hidden={!info.next? true:false}>
+            <button onClick={nextPage}  hidden={!info.next ? true : false}>
             Next
             </button>
         </div>     

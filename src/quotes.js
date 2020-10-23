@@ -107,7 +107,7 @@ export const quotes = [
     {
         id: 22,
         name: "Wannes Dieltiens",
-        quote: "“Blockchains are the future, HODL!”",
+        quote: "“I shouldn't be making my own quotes, HODL!”",
     },
     {
         id: 23,

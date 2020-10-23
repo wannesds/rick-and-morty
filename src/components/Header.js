@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import  {quotes} from '../quotes.js';
 
 
-const Header = () => {
+function Header({url}) {
+    const [id, setId] = useState(1);
 
-    const id = Math.trunc(Math.random() * quotes.length);
+    useEffect(() => {
+        setId(Math.trunc(Math.random() * quotes.length))
+    }, [url]);
 
     return (
         <div className="QuoteBox">

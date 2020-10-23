@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header url={url}/>
 
       <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
 

@@ -101,7 +101,7 @@ button:hover, input:hover, select:hover {
 
 .FooterBox {
     background-color:rgba(24, 24, 24, 0.95);
-    padding: 10px 0 20px 0;
+    padding: 10px 0 10px 0;
     margin: 10px auto 0 auto;
 }
 
@@ -109,7 +109,7 @@ button:hover, input:hover, select:hover {
     color:rgb(8, 134, 77);
     text-align: center;
     padding: 3px;
-    margin: 5px auto;
+    margin: 4px auto;
 }
 
 .FooterBox p span {
