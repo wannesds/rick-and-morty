@@ -31,9 +31,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header url={url}/>
-
-      <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
+      <div className="HeaderBox">
+        <Header url={url}/>
+        <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
+      </div>
+      
 
       {/* check first if loading, then check if error, then show content */}
       { isLoading ? <div className="ErrorBox">Loading ...</div> : 
@@ -64,7 +66,7 @@ function App() {
 
 }
 
-
+//OLD CODE 
 // class App extends Component {
 //   constructor() {
 //     super ()

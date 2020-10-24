@@ -1,3 +1,6 @@
+/*ALL ON 1 PAGE BCS OF PROJECT SIZE, MIGHT SPLIT UP IN FUTURE
+WILL BE REWRITTEN IN SASS */
+
 body {
     background-color:rgb(19, 19, 19);
 }
@@ -9,41 +12,49 @@ body {
     background-position: center;
 }
 
-.QuoteBox {
+.HeaderBox {
+    display: flex;
+    height: 6rem;
     background-color: rgba(24, 24, 24, 0.95);
+}
+
+.QuoteBox {
     color:rgb(13, 184, 107); 
-    padding: 0.5rem;
-    margin: auto;
+    padding:0.5rem 0 0 0.5rem;
+    flex-grow: 1;
+    margin:auto;
 }
 
 .QuoteBox p {
-    margin:auto 0 auto 10px;
+    margin:auto 0 auto 0.5rem;
+    
 }
-
 
 form { /*filter*/
     /* max-width: 40rem;
     margin:5px auto; */
-    padding: 5px;
+    align-items: center;
     color: rgb(34, 189, 116);
     display: flex;
-    justify-content: center;
-    flex-wrap:wrap;
-    background-color: rgba(32, 32, 32, 0.699);
+    padding:0.5rem 1rem;
+    /* background-color: rgba(32, 32, 32, 0.699); */
+    background-color: linear-gradient(top, rgb(29, 204, 125) 0%, rgb(10, 141, 82) 100%);
     /* border-radius: 2rem; */
 }
 
 select, input, button, .ChangePageBox p {
     padding: 8px;
+    height: 2.5rem;
     color:rgb(13, 184, 107); 
-    background-color: rgba(24, 24, 24, 0.95);
-    border-color: rgba(24, 24, 24, 0.95);
+    background-color: rgba(24, 24, 24);
+    border-color: rgba(24, 24, 24);
     border-radius: 1.5rem;
     border-style: solid;
     box-decoration-break: slice;
 }
 select {
     border-radius: 0;
+    border-style: double;
 }
 input {
     border-top-right-radius: 0;
@@ -67,12 +78,19 @@ textarea:focus, input:focus, button:focus, select:focus{
 button:hover, input:hover, select:hover {
     background-color: rgb(36, 38, 36);
     border-color: rgb(13, 184, 107);
-    box-shadow: inset rgba(24, 24, 24, 0.733) 2px 2px 10px;
+    box-shadow: inset rgba(13, 184, 107, 0.733) 2px 2px 8px;
+    
 }
 
 form button:hover {
     background-color:rgb(13, 184, 107);
+    border-color:rgb(26, 194, 118);
+    box-shadow: inset rgba(27, 248, 148, 0.733) 2px 2px 8px;
+}
+form button:active {
+    background-color:rgb(18, 173, 104);
     border-color:rgb(16, 65, 43);
+    box-shadow: inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 }
 
 .ChangePageBox {
@@ -85,14 +103,19 @@ form button:hover {
     border-radius: 2rem;
 }
 .ChangePageBox button{
-    width: 80px; 
+    width: 80px;
+    background-color:rgba(24, 24, 24,0.9);
+}
+.ChangePageBox button:active {
+    border-color:rgb(16, 65, 43);
+    box-shadow: inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 }
 .ChangePageBox p {
     margin: auto;
 }
 
 .CardListBox {
-    width: 98vw;
+    width: 97vw;
     margin: 0 auto;
     padding: 0 auto;
     color: rgb(34, 189, 116);    
@@ -106,14 +129,15 @@ form button:hover {
 }
 
 .Card {
-    background-color:rgba(22, 22, 22, 0.918);
+    background-color:rgba(22, 22, 22, 0.85);
     color:rgb(13, 184, 107); 
     width: auto;
-    max-width: 170px;
+    max-width: 180px;
     height: 220px;
     margin: 3px;
     padding: 8px;
     border-radius: 0.5rem;
+    flex-grow: 1;
     /* max-width: 300px;
     min-width: 60px; */
     /* should make width fixed amount at small or big screensizes*/   
@@ -127,13 +151,18 @@ form button:hover {
 }
 
 .Card h3 {
-    height: 45px;
+    margin-bottom: 0;
+    height: 3.85rem;
+}
+.Card h4 {
+    margin: 0;
 }
 
 .Card p {
     margin: 0 auto;
     padding: 0 auto;
 }
+
 
 .Gender {
     float: left;
@@ -173,11 +202,38 @@ form button:hover {
     color:rgb(13, 184, 107);
 }
 
+@media (max-width:1250px){
+    .HeaderBox {
+        height: 7.5rem;
+    }
+}
+
+@media (max-width:1000px){
+    .HeaderBox {
+        height: 9rem;
+    }
+}
+
 @media (max-width:900px){  
     .App {
         background-image: url(../rick_and_morty_by_sawuinhaff_vertical.png);
         background-size: auto;
         background-position:top;
         background-repeat: repeat-y;
-    }        
+    } 
+    .HeaderBox {
+        flex-wrap: wrap;
+        height: 11em;
+    }
+    form {
+        padding-top:0;
+        margin: auto;
+        margin-bottom:0.5rem;
+    }
+} 
+
+@media (max-width: 600px) {
+    .HeaderBox {
+        height: 13.5em;
+    }
 }

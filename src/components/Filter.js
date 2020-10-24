@@ -17,16 +17,19 @@ function Filter({getQuery}) {
     return (
         <form>
             <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name'/>
-            <select className="" name="status" onChange={e => setStatus(e.target.value)}>
-                <option value="">-</option>
-                <option value="alive">alive</option>
-                <option value="dead">dead</option>
-            </select>
+
             <select name="gender" onChange={e => setGender(e.target.value)}>
                 <option value="">-</option>
                 <option value="male">male</option>
                 <option value="female">female</option>
             </select>
+
+            <select name="status" onChange={e => setStatus(e.target.value)}>
+                <option value="">-</option>
+                <option value="alive">alive</option>
+                <option value="dead">dead</option>
+            </select>
+
             <button onClick={makeQuery}>Scan</button>
         </form>
 
