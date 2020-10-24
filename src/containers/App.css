@@ -38,7 +38,6 @@ form { /*filter*/
     display: flex;
     padding:0.5rem 1rem;
     /* background-color: rgba(32, 32, 32, 0.699); */
-    background-color: linear-gradient(top, rgb(29, 204, 125) 0%, rgb(10, 141, 82) 100%);
     /* border-radius: 2rem; */
 }
 
