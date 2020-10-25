@@ -7,6 +7,7 @@ const Footer = () => {
             <p>by <span>Wannes Dieltiens</span> 2020</p>
             <p>Thanks to rickandmortyapi.com and Eric Sawuinhaff (art) </p>
         </div>
+        /* should change in <a hrefs */
     )
 }
 

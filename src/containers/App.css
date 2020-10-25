@@ -10,18 +10,18 @@ body {
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;
 }
 
 .HeaderBox {
     display: flex;
     height: 6rem;
     background-color: rgba(24, 24, 24, 0.95);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
 }
 
 .QuoteBox {
     color:rgb(13, 184, 107); 
-    padding:0.5rem 0 0 0.5rem;
     flex-grow: 1;
     margin:auto;
 }
@@ -37,7 +37,6 @@ form { /*filter*/
     align-items: center;
     color: rgb(34, 189, 116);
     display: flex;
-    padding:0.5rem 1rem;
     /* background-color: rgba(241, 0, 0, 0.699); */
     /* border-radius: 2rem; */
 }
@@ -95,23 +94,32 @@ form button:active {
 
 .ChangePageBox {
     margin: 1rem auto;
-    width: 20rem;
-    padding: 10px;
-    display: flex;
-   
-    /* background-color: rgba(32, 32, 32, 0.699); */
-    border-radius: 2rem;
+    width: 16rem;
+    display:flex;
+    justify-content: space-between;
+    position: relative;
 }
 .ChangePageBox button{
     width: 80px;
+    margin:auto 0;
     background-color:rgba(24, 24, 24,0.9);
+    
 }
 .ChangePageBox button:active {
     border-color:rgb(16, 65, 43);
     box-shadow: inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 }
+.ChangePageBox button:disabled {
+    border: none;
+    box-shadow: none;
+    color:rgb(16, 65, 43);
+}
 .ChangePageBox p {
-    margin: auto;
+    width: 5rem;
+    text-align: center;
+    display: inline-block;
+    margin: auto 0;
+    position: inherit;
 }
 
 .CardListBox {
@@ -179,6 +187,7 @@ form button:active {
     background-color:rgba(13, 184, 107);
     border-radius: 50%;
     border-style:solid;
+    border-width: 2px;
     background-image: url(../skull.png);
     background-size: cover;
 }
@@ -193,7 +202,7 @@ form button:active {
     /* padding: 10px 0 10px 0;
     margin: 10px auto 0 auto; */
     bottom:0;
-    height:fill;
+    height:auto;
     padding: 1rem;
     margin-top: 1rem;
 }
@@ -250,12 +259,21 @@ form button:active {
 
 @media (max-width: 600px) {
     .HeaderBox {
-        height: 13.5em;
+        height: 9em;
+        padding:0.5rem;
     }
-    
+    .QuoteBox {
+        margin:0;
+    }
+    .QuoteBox p {
+        font-size:1rem;
+    }
+    .CardList {
+        margin: 0.3rem auto;
+    }
     .Card {
         max-width: 7rem; 
-        padding: 0.2rem;
+        padding: 0.4rem;
     }
     .Card img {
         height:3.5rem;
@@ -273,8 +291,17 @@ form button:active {
         width:1rem;
         height:1rem;
     }
+    form {
+        margin:0 auto;
+    }
     select, input, button, .ChangePageBox p {
-        padding: 0px;
-        height: 1.7rem;
+        padding: 2px;
+        height: 1.9rem;
+    }
+    select {
+        width:3rem;
+    }
+    input {
+        width: 8rem;
     }
 }
