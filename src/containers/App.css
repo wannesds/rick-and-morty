@@ -259,11 +259,8 @@ form button:active {
 
 @media (max-width: 600px) {
     .HeaderBox {
-        height: 9em;
-        padding:0.5rem;
-    }
-    .QuoteBox {
-        margin:0;
+        height: 8.5rem;
+        padding:0.1rem;
     }
     .QuoteBox p {
         font-size:1rem;
@@ -293,13 +290,14 @@ form button:active {
     }
     form {
         margin:0 auto;
+        margin-bottom:0;
     }
     select, input, button, .ChangePageBox p {
         padding: 2px;
         height: 1.9rem;
     }
     select {
-        width:3rem;
+        width:4rem;
     }
     input {
         width: 8rem;
