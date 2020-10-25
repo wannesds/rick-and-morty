@@ -72,8 +72,6 @@ textarea:focus, input:focus, button:focus, select:focus{
     outline: none;
 }
 
-
-
 button:hover, input:hover, select:hover {
     background-color: rgb(36, 38, 36);
     border-color: rgb(13, 184, 107);
@@ -122,12 +120,16 @@ form button:active {
     position: inherit;
 }
 
-.CardListBox {
+.CardListBox { /*!this box is parent of form*/
     width: 97%;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: auto;
+    padding: auto;
     color: rgb(34, 189, 116);
-    min-height:80vh;  
+    min-height:85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
 }
 
 .CardList {
@@ -154,8 +156,6 @@ form button:active {
 }
 
 .Card img {
-    width: 6rem;
-    height: 6rem;
     display: block;
     margin: 0 auto;
 }
@@ -214,17 +214,42 @@ form button:active {
     margin: 4px auto;
 }
 
-.FooterBox p span {
-    font-style: italic; 
+.FooterBox p a {
+    font-style: italic;
+    color:rgb(20, 133, 86);
+    
+}
+.FooterBox p a:hover {
     color:rgb(13, 184, 107);
+}
+
+@media (min-width:1920px) {
+    .Card img {
+        height:9rem;
+        width:9rem;
+    }
+    .Card {
+        padding:1rem;
+    }
+}
+
+@media (max-width:1920px) {
+    .Card img {
+        height:7.5rem;
+        width:7.5rem;
+    }
+    .Card {
+        padding: 0.5rem;
+    }
 }
 
 @media (max-width:1250px){
     .HeaderBox {
         height: 7.5rem;
     }
-    .ChangePageBox {
-        margin:0 auto;
+    .Card img {
+        height: 6.5rem;
+        width: 6.5rem;
     }
 }
 
@@ -232,7 +257,10 @@ form button:active {
     .HeaderBox {
         height: 9rem;
     }
-    
+    .Card img {
+        height:5.5rem;
+        width:5.5rem;
+    }
 }
 
 @media (max-width:900px){  
@@ -254,7 +282,13 @@ form button:active {
         margin: auto;
         margin-bottom:0.5rem;
     }
-    
+    .Card img {
+        height:5rem;
+        width:5rem;
+    }
+    .ChangePageBox {
+        margin:0.4rem;
+    }
 } 
 
 @media (max-width: 600px) {
@@ -301,5 +335,8 @@ form button:active {
     }
     input {
         width: 8rem;
+    }
+    .ChangePageBox {
+        margin:0rem;
     }
 }

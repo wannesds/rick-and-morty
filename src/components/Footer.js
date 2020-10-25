@@ -4,8 +4,13 @@ const Footer = () => {
 
     return(
         <div className="FooterBox">        
-            <p>by <span>Wannes Dieltiens</span> 2020</p>
-            <p>Thanks to rickandmortyapi.com and Eric Sawuinhaff (art) </p>
+            <p>
+                by <a href="https://github.com/wannesds">Wannes Dieltiens</a> 2020
+            </p>
+
+            <p>
+                Thanks to <a href="https://rickandmortyapi.com">rickandmortyapi.com</a> and <a href="https://deviantart.com/sawuinhaff">Eric Sawuinhaff</a> (art)
+            </p>
         </div>
         /* should change in <a hrefs */
     )
