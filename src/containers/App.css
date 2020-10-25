@@ -15,7 +15,7 @@ body {
 .HeaderBox {
     display: flex;
     height: 6rem;
-    background-color: rgba(24, 24, 24, 0.95);
+    background-color: rgba(20, 22, 20, 0.95);
     margin-bottom: 0.5rem;
     padding: 1rem;
 }
@@ -45,8 +45,8 @@ select, input, button, .ChangePageBox p {
     padding: 8px;
     height: 2.5rem;
     color:rgb(13, 184, 107); 
-    background-color: rgba(24, 24, 24);
-    border-color: rgba(24, 24, 24);
+    background-color: rgb(24, 30, 26);
+    border-color: rgb(39, 48, 44);
     border-radius: 1.5rem;
     border-style: solid;
     box-decoration-break: slice;
@@ -62,11 +62,11 @@ input {
 form button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-left-style: hidden;
+    /* border-left-style: hidden; */
     border-color: rgba(13, 184, 107);
-    border-left-color: rgba(0, 31, 16);
-    background-color: rgb(13, 184, 107); 
-    color:rgba(0,31,16);
+    /* border-left-color: rgba(0, 31, 16); */
+    background-color: rgb(24, 30, 26); 
+    color:rgb(13, 184, 107);
 }
 textarea:focus, input:focus, button:focus, select:focus{
     outline: none;
@@ -75,14 +75,14 @@ textarea:focus, input:focus, button:focus, select:focus{
 button:hover, input:hover, select:hover {
     background-color: rgb(36, 38, 36);
     border-color: rgb(13, 184, 107);
-    box-shadow: inset rgba(13, 184, 107, 0.733) 2px 2px 8px;
-    
+    box-shadow: inset rgba(13, 184, 107, 0.733) 2px 2px 8px;   
 }
 
 form button:hover {
     background-color:rgb(13, 184, 107);
     border-color:rgb(26, 194, 118);
-    box-shadow: inset rgba(27, 248, 148, 0.733) 2px 2px 8px;
+    /* box-shadow: inset rgba(27, 248, 148, 0.733) 2px 2px 8px; */
+    color:rgb(24, 30, 26);
 }
 form button:active {
     background-color:rgb(18, 173, 104);
@@ -101,7 +101,6 @@ form button:active {
     width: 80px;
     margin:auto 0;
     background-color:rgba(24, 24, 24,0.9);
-    
 }
 .ChangePageBox button:active {
     border-color:rgb(16, 65, 43);
@@ -198,7 +197,7 @@ form button:active {
 }
 
 .FooterBox {
-    background-color:rgba(24, 24, 24, 0.95);
+    background-color:rgba(22, 22, 22, 0.95);
     /* padding: 10px 0 10px 0;
     margin: 10px auto 0 auto; */
     bottom:0;
