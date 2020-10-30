@@ -3,6 +3,7 @@ WILL BE REWRITTEN IN SASS */
 
 body {
     background-color:rgb(19, 19, 19);
+
 }
 
 .App {
@@ -29,15 +30,14 @@ body {
 
 .QuoteBox {
     color:rgb(13, 184, 107); 
-    /* color:rgb(13, 184, 107);  */
+    /* color:rgb(13, 184, 107);*/
     flex-grow: 1;
     margin:auto;
     font-weight: 600;
 }
 
 .QuoteBox p {
-    margin:auto 0 auto 0.5rem;
-    
+    margin:auto 0 auto 0.5rem;  
 }
 
 form { /*filter*/
