@@ -10,12 +10,7 @@ const Card = ({id, name, status, species, gender, origin, location, episode}) =>
                 <h3>{name} <h4>- {species}</h4></h3>
                 <h5 className='Gender'>{gender}</h5>
                 <p>Last location:<br></br> <h5>{location.name}</h5></p>
-                <p>Origin:<br></br> <h5>{origin.name}</h5></p>
-               
-                            
-                
-                
-                
+                <p>Origin:<br></br> <h5>{origin.name}</h5></p>  
                 {status === 'Alive' ? null : <div className='DeadSign'></div>}
             </div>
                       
