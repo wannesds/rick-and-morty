@@ -1,4 +1,4 @@
-/*ALL ON 1 PAGE BCS OF PROJECT SIZE, MIGHT SPLIT UP IN FUTURE
+/*ALL ON 1 PAGE BCS OF PROJECT SIZE, WILL SPLIT UP IN FUTURE
 WILL BE REWRITTEN IN SASS */
 
 body {
@@ -6,24 +6,33 @@ body {
 }
 
 .App {
-    background-image: url(../rick_and_morty_by_sawuinhaff_horizontal.png);
-    background-size: cover; 
+    /* background-image: url(../rick_and_morty_by_sawuinhaff_horizontal.png);
+   
+    background-position: center; */
+    background: rgb(33,73,61); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%, rgba(36,50,60,1) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%,rgba(36,50,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at top, rgba(28, 155, 102, 0.349) 0%,rgb(29, 48, 48) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */    background-size: stretch; 
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .HeaderBox {
     display: flex;
     height: 6rem;
-    background-color: rgba(20, 22, 20, 0.95);
+    background-color: rgba(144, 226, 199, 0.164);
     margin-bottom: 0.5rem;
     padding: 1rem;
+    background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(170deg, rgba(5, 19, 18, 0.65) 0%,rgba(0, 0, 0, 0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .QuoteBox {
     color:rgb(13, 184, 107); 
+    /* color:rgb(13, 184, 107);  */
     flex-grow: 1;
     margin:auto;
+    font-weight: 600;
 }
 
 .QuoteBox p {
@@ -37,13 +46,14 @@ form { /*filter*/
     align-items: center;
     color: rgb(34, 189, 116);
     display: flex;
+    margin-right: 10px;
     /* background-color: rgba(241, 0, 0, 0.699); */
     /* border-radius: 2rem; */
 }
 
 select, input, button, .ChangePageBox p {
-    padding: 8px;
-    height: 2.5rem;
+    padding: 5px;
+    height: 35px;
     color:rgb(13, 184, 107); 
     background-color: rgb(24, 30, 26);
     border-color: rgb(39, 48, 44);
@@ -58,15 +68,18 @@ select {
 input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
 }
 form button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    /* border-left-style: hidden; */
-    border-color: rgba(13, 184, 107);
-    /* border-left-color: rgba(0, 31, 16); */
+    /* border-color: rgba(13, 184, 107); */
     background-color: rgb(24, 30, 26); 
     color:rgb(13, 184, 107);
+    text-align: center;
+
+    /* border-left-style: hidden; */
+    /* border-left-color: rgba(0, 31, 16); */
 }
 textarea:focus, input:focus, button:focus, select:focus{
     outline: none;
@@ -117,15 +130,15 @@ form button:active {
     display: inline-block;
     margin: auto 0;
     position: inherit;
+    border-color: rgb(24, 30, 26);
 }
 
 .CardListBox { /*!this box is parent of form*/
     width: 97%;
     margin: auto;
     padding: auto;
-    color: rgb(34, 189, 116);
     min-height:85vh;
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: top;
@@ -140,55 +153,78 @@ form button:active {
 }
 
 .Card {
-    background-color:rgba(22, 22, 22, 0.85);
-    color:rgb(13, 184, 107); 
-    width: auto;
-    max-width: 180px;
-    height: auto;
-    margin: 3px;
-    padding: 8px;
-    border-radius: 0.5rem;
-    flex-grow: 1;
-    /* max-width: 300px;
-    min-width: 60px; */
+    background-color:rgba(22, 22, 22, 0.719);
+    color:rgb(75, 104, 99); 
+    width: 400px;
+    height: 150px;
+    margin: 0.5rem;
+    border-radius: 0.5rem; 
+    display:flex;  
     /* should make width fixed amount at small or big screensizes*/   
 }
-
+.CardInfo {
+    width: 250px;
+    padding-left: 5px;
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
 .Card img {
-    display: block;
-    margin: 0 auto;
+    opacity: 100%;
+    height: 150px;
+    border-top-left-radius:0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
 .Card h3 {
-    margin-bottom: 0;
-    height: auto;
-    min-height:3.85rem;
+    width: 250px;
+    margin:0;
+    color:rgb(131, 216, 176);
 }
-.Card h4 {
-    margin: 0;
+.Card h4, h5 {
+    font-weight: 500;
+    font-size:1rem;
+    color:rgb(59, 116, 90);
+    display:inline-block;
+    margin:auto 0;
+    font-style:italic;
+}
+
+.Card h5 {
+    color:rgb(27, 189, 135);
+    font-size: 0.9rem;
+    margin-left:5px;
+    margin-top: 1px;
 }
 
 .Card p {
-    margin: 0 auto;
-    padding: 0 auto;
+    width:250px;
     display:block;
+    height:auto;
+    padding:0;
+    margin:0;
+    font-size: 0.9rem;
+    text-decoration-line: underline;
 }
 
-
-.Gender {
-    float: left;
+.CardInfo .Gender {
+    color:rgb(36, 196, 143);
+    font-size: 1rem;
 }
 
 .DeadSign {
-    float: right;
-    width: 1.5rem;
-    height: 1.5rem;
+    margin: 15px 60px;;
+    width: 120px;
+    height: 120px;
     background-color:rgba(13, 184, 107);
+    border-color:rgba(13, 184, 107);
     border-radius: 50%;
     border-style:solid;
-    border-width: 2px;
+    border-width: 6px;
     background-image: url(../skull.png);
     background-size: cover;
+    position: absolute;
+    opacity: 5%;
 }
 
 .ErrorBox {
@@ -197,7 +233,7 @@ form button:active {
 }
 
 .FooterBox {
-    background-color:rgba(22, 22, 22, 0.95);
+    background-color:rgba(22, 22, 22, 0.781);
     /* padding: 10px 0 10px 0;
     margin: 10px auto 0 auto; */
     bottom:0;
@@ -222,23 +258,21 @@ form button:active {
     color:rgb(13, 184, 107);
 }
 
-@media (min-width:1920px) {
+/* @media (min-width:1920px) {
     .Card img {
-        height:9rem;
-        width:9rem;
+     
     }
     .Card {
-        padding:1rem;
+        
     }
 }
 
 @media (max-width:1920px) {
     .Card img {
-        height:7.5rem;
-        width:7.5rem;
+        
     }
     .Card {
-        padding: 0.5rem;
+        
     }
 }
 
@@ -247,8 +281,7 @@ form button:active {
         height: 7.5rem;
     }
     .Card img {
-        height: 6.5rem;
-        width: 6.5rem;
+        
     }
 }
 
@@ -257,17 +290,13 @@ form button:active {
         height: 9rem;
     }
     .Card img {
-        height:5.5rem;
-        width:5.5rem;
+        
     }
 }
 
 @media (max-width:900px){  
     .App {
-        background-image: url(../rick_and_morty_by_sawuinhaff_vertical.png);
-        background-size: auto;
-        background-position:top;
-        background-repeat: repeat-y;
+        
     } 
     .HeaderBox {
         flex-wrap: wrap;
@@ -286,7 +315,7 @@ form button:active {
         width:5rem;
     }
     .ChangePageBox {
-        margin:0.4rem;
+        margin:0.4rem auto;
     }
 } 
 
@@ -298,22 +327,27 @@ form button:active {
     .QuoteBox p {
         font-size:1rem;
     }
+    .CardListBox {
+        width:100%;
+    }
     .CardList {
         margin: 0.3rem auto;
     }
-    .Card {
-        max-width: 7rem; 
-        padding: 0.4rem;
+    .Card { 
+        height: 3.5rem;
+        width: 10.5rem;
+        margin: 0.1rem;
     }
     .Card img {
         height:3.5rem;
         width:3.5rem;
     }
     .Card h3, .Card h4,.Card p {
-        font-size: 0.8rem;
-        margin: 0;
+        font-size: 0.5rem;
+        margin: 0.1rem;
     }
     .Card h3 {
+        font-size: 0.7rem;
         height:auto;
         min-height:2rem;
     }
@@ -326,7 +360,7 @@ form button:active {
         margin-bottom:0;
     }
     select, input, button, .ChangePageBox p {
-        padding: 2px;
+        padding: 0.2rem;
         height: 1.9rem;
     }
     select {
@@ -336,6 +370,6 @@ form button:active {
         width: 8rem;
     }
     .ChangePageBox {
-        margin:0rem;
+        margin:0rem auto;
     }
-}
+} */

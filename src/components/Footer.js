@@ -9,7 +9,8 @@ const Footer = () => {
             </p>
 
             <p>
-                Thanks to <a href="https://rickandmortyapi.com">rickandmortyapi.com</a> and <a href="https://deviantart.com/sawuinhaff">Eric Sawuinhaff</a> (art)
+                Thanks to <a href="https://rickandmortyapi.com">rickandmortyapi.com</a>
+                 {/* and <a href="https://deviantart.com/sawuinhaff">Eric Sawuinhaff</a> (art) */}
             </p>
         </div>
         /* should change in <a hrefs */

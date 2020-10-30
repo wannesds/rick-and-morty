@@ -16,6 +16,7 @@ function CardList({ chars }) {
                         gender={chars[i].gender}
                         origin={chars[i].origin}
                         location={chars[i].location}
+                        episode={chars[i].episode}
                         />
                     );
                 })   

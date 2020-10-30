@@ -1,19 +1,24 @@
 import React from 'react';
 
-const Card = ({id, name, status, species, gender, origin, location}) => {
+const Card = ({id, name, status, species, gender, origin, location, episode}) => {
     return (
-        <div className='Card grow'>
+        <div className='Card'>
             
-            <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`} width='100px'/>
-            <h3>{name}</h3>
-
-            {/* <div className="MoreInfo" hidden={true}>
-                <h4>Location: {location.name}</h4>
-                <h4>Origin: {origin.name}</h4>
-            </div> */}
-                          
-            <p className='Gender'>{gender}</p>
-            {status === 'Alive' ? null : <div className='DeadSign'></div>}           
+            <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`}/>
+            
+            <div className='CardInfo'>
+                <h3>{name} <h4>- {species}</h4></h3>
+                <h5 className='Gender'>{gender}</h5>
+                <p>Last location:<br></br> <h5>{location.name}</h5></p>
+                <p>Origin:<br></br> <h5>{origin.name}</h5></p>
+               
+                            
+                
+                
+                
+                {status === 'Alive' ? null : <div className='DeadSign'></div>}
+            </div>
+                      
         </div>
     );
 }
