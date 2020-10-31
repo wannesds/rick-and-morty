@@ -1,0 +1,242 @@
+/* SINCE ITS A SMALL APP IV DECIDED TO PUT ALL CSS IN 1 FILE EXCEPT FOR VARS & @MEDIA */
+@import './_media';
+@import './_vars'; /*scss variables initiated here*/
+
+body {
+    // background-color:rgb(19, 19, 19);
+    background-color: $color1;
+}
+
+.App {
+    background: rgb(33,73,61); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%, rgba(36,50,60,1) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%,rgba(36,50,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at top, rgba(28, 155, 102, 0.4) 0%,rgb(29, 48, 48) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */    background-size: stretch; 
+    background-repeat: no-repeat;
+}
+
+.HeaderBox {
+    display: flex;
+    height: 6rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(170deg, rgba(5, 19, 18, 0.4) 0%,rgba(0, 0, 0, 0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.QuoteBox {
+    color: $colorAccentL; 
+    /* color:rgb(13, 184, 107);*/
+    flex-grow: 1;
+    margin:auto;
+    font-weight: 600;
+    p {
+        margin:auto 0 auto 0.5rem; 
+    }
+}
+
+form { /*filter*/
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+}
+
+select, input, button, .ChangePageBox p {
+    padding: 5px;
+    height: 35px;
+    color: $colorAccentL; 
+    background-color: $colorDark;
+    border-color: $colorDarkL;
+    border-radius: 1.5rem;
+    border-style: solid;
+    box-decoration-break: slice;
+}
+select {
+    border-radius: 0;
+    border-style: double;
+}
+input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+form button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: $colorDark; 
+    color: $colorAccent;
+    text-align: center;
+}
+textarea:focus, input:focus, button:focus, select:focus{
+    outline: none;
+}
+
+button:hover, input:hover, select:hover {
+    background-color: rgb(36, 38, 36);
+    border-color: $colorAccent;
+    box-shadow: inset ($colorAccent, 0.733) 2px 2px 8px;   
+}
+
+form button:hover {
+    background-color: $colorAccent;
+    border-color: $colorAccentL;
+    color: $colorDark;
+}
+form button:active {
+    background-color: $colorAccent;
+    border-color: $colorGreen;
+    box-shadow: $shadowDark;
+}
+
+.ChangePageBox {
+    margin: 1rem auto;
+    width: 16rem;
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+}
+.ChangePageBox button{
+    width: 80px;
+    margin:auto 0;
+    background-color: $colorDark;
+}
+.ChangePageBox button:active {
+    border-color: $colorGreen;
+    box-shadow: $shadowDark;
+}
+.ChangePageBox button:disabled {
+    border: none;
+    box-shadow: none;
+    color: $colorGreen;
+}
+.ChangePageBox p {
+    width: 5rem;
+    text-align: center;
+    display: inline-block;
+    margin: auto 0;
+    position: inherit;
+    border-color: $colorDark;
+}
+
+.CardListBox {
+    width: 97%;
+    margin: auto;
+    padding: auto;
+    min-height:84vh;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+}
+
+.CardList {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.Card {
+    background-color: ($colorDark, 0.75);
+    color: $colorBluegrey; 
+    width: 400px;
+    height: 150px;
+    margin: 0.5rem;
+    border-radius: 0.5rem; 
+    display:flex;
+}
+.CardInfo {
+    width: 250px;
+    padding-left: 5px;
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Card img {
+    opacity: 100%;
+    height: 150px;
+    width: 150px;
+    border-top-left-radius:0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    opacity: 1;
+}
+
+.Card h3 {
+    width: 250px;
+    margin:0;
+    color: $colorBlueL;
+}
+.Card h4, h5 {
+    font-weight: 500;
+    font-size:1rem;
+    color: $colorGreengrey;
+    display:inline-block;
+    margin:auto 0;
+    font-style:italic;
+}
+
+.Card h5 {
+    color: $colorAccentD;
+    font-size: 0.9rem;
+    margin-left:5px;
+    margin-top: 1px;
+}
+
+.Card p {
+    width:250px;
+    display:block;
+    height:auto;
+    padding:0;
+    margin:0;
+    font-size: 0.9rem;
+    text-decoration-line: underline;
+}
+
+.CardInfo .Species {
+    color: $colorAccentD;
+    font-size: 1rem;
+}
+
+.DeadSign {
+    margin: 15px 60px;;
+    width: 120px;
+    height: 120px;
+    border-color: $colorAccent;
+    border-radius: 50%;
+    border-style:solid;
+    border-width: 6px;
+    background-image: url(../skull.png);
+    background-size: cover;
+    position: absolute;
+    opacity: 0.1;
+}
+
+.ErrorBox {
+    width:100%;
+    height: 30rem;
+}
+
+.FooterBox {
+    background-color:rgba(22, 22, 22, 0.781);
+    bottom:0;
+    height:auto;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.FooterBox p {
+    color: $colorGreengrey;
+    text-align: center;
+    padding: 3px;
+    margin: 4px auto;
+}
+
+.FooterBox p a {
+    font-style: italic;
+    color: $colorGreen;
+    
+}
+.FooterBox p a:hover {
+    color: $colorAccent;
+}

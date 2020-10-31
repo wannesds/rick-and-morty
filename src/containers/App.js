@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './App.css'; /*delete when done w moving over css to sass*/ 
+import './App.scss';
 import CardList from '../components/CardList';
 import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';

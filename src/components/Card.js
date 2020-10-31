@@ -8,7 +8,7 @@ const Card = ({id, name, status, species, gender, origin, location, episode}) =>
             
             <div className='CardInfo'>
                 <h3>{name} <h4>- {gender}</h4></h3>
-                <h5 className='Gender'>{species}</h5>
+                <h5 className='Species'>{species}</h5>
                 <p>Last location:<br></br> <h5>{location.name}</h5></p>
                 <p>Origin:<br></br> <h5>{origin.name}</h5></p>  
                 {status === 'Alive' ? null : <div className='DeadSign'></div>}
