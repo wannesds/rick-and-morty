@@ -4,14 +4,15 @@
 
 body {
     // background-color:rgb(19, 19, 19);
-    background-color: $color1;
 }
 
 .App {
-    background: rgb(33,73,61); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%, rgba(36,50,60,1) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(33,73,61,1) 0%,rgba(36,50,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at top, rgba(28, 155, 102, 0.4) 0%,rgb(29, 48, 48) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */    background-size: stretch; 
+    background: $color7;
+    background: #{$mz}$bbg ;
+    background: #{$wk}$bbg ;
+    background: $bbg ;
+    
+    background-size: stretch; 
     background-repeat: no-repeat;
 }
 
@@ -20,19 +21,22 @@ body {
     height: 6rem;
     margin-bottom: 0.5rem;
     padding: 1rem;
-    background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(170deg, rgba(5, 19, 18, 0.4) 0%,rgba(0, 0, 0, 0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: rgb(26, 37, 34);
+    background: #{$mz}$hbg ;
+    background: #{$wk}$hbg ;
+    background: $hbg ;   
 }
 
 .QuoteBox {
-    color: $colorAccentL; 
-    /* color:rgb(13, 184, 107);*/
     flex-grow: 1;
     margin:auto;
     font-weight: 600;
     p {
-        margin:auto 0 auto 0.5rem; 
+        margin:auto 0 auto 0.5rem;
+        color: $color5;
+        &:last-child {
+            color:$colorGrey;
+        }
     }
 }
 
@@ -45,7 +49,7 @@ form { /*filter*/
 select, input, button, .ChangePageBox p {
     padding: 5px;
     height: 35px;
-    color: $colorAccentL; 
+    color: $color4; 
     background-color: $colorDark;
     border-color: $colorDarkL;
     border-radius: 1.5rem;
@@ -64,7 +68,6 @@ form button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     background-color: $colorDark; 
-    color: $colorAccent;
     text-align: center;
 }
 textarea:focus, input:focus, button:focus, select:focus{
@@ -72,20 +75,19 @@ textarea:focus, input:focus, button:focus, select:focus{
 }
 
 button:hover, input:hover, select:hover {
-    background-color: rgb(36, 38, 36);
-    border-color: $colorAccent;
-    box-shadow: inset ($colorAccent, 0.733) 2px 2px 8px;   
+    background-color: $colorDarkP;
+    border-color: $color4;
+    box-shadow: inset ($color4) 2px 2px 8px;   
 }
 
 form button:hover {
-    background-color: $colorAccent;
-    border-color: $colorAccentL;
+    background-color: $color4;
+    border-color: $color4;
     color: $colorDark;
 }
 form button:active {
-    background-color: $colorAccent;
+    background-color: $color4;
     border-color: $colorGreen;
-    box-shadow: $shadowDark;
 }
 
 .ChangePageBox {
@@ -126,7 +128,7 @@ form button:active {
     display: block;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
+    justify-content: center;
 }
 
 .CardList {
@@ -134,12 +136,11 @@ form button:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
 }
 
 .Card {
-    background-color: ($colorDark, 0.75);
-    color: $colorBluegrey; 
+    background-color: $colorDarkT;
+    color: $colorGrey; 
     width: 400px;
     height: 150px;
     margin: 0.5rem;
@@ -162,22 +163,22 @@ form button:active {
     opacity: 1;
 }
 
-.Card h3 {
+.Card h3 { //name
     width: 250px;
     margin:0;
-    color: $colorBlueL;
+    color: $color4;
 }
 .Card h4, h5 {
     font-weight: 500;
     font-size:1rem;
-    color: $colorGreengrey;
+    color: $colorGrey;
     display:inline-block;
     margin:auto 0;
     font-style:italic;
 }
 
-.Card h5 {
-    color: $colorAccentD;
+.Card h5 { //origin location
+    color: $color2;
     font-size: 0.9rem;
     margin-left:5px;
     margin-top: 1px;
@@ -194,15 +195,16 @@ form button:active {
 }
 
 .CardInfo .Species {
-    color: $colorAccentD;
+    color: $color5;
     font-size: 1rem;
 }
 
 .DeadSign {
-    margin: 15px 60px;;
+    margin: 15px 60px;
     width: 120px;
     height: 120px;
-    border-color: $colorAccent;
+    border-color: $color2;
+    background-color: $color2;
     border-radius: 50%;
     border-style:solid;
     border-width: 6px;
@@ -214,11 +216,11 @@ form button:active {
 
 .ErrorBox {
     width:100%;
-    height: 30rem;
+    height: 84vh;
 }
 
 .FooterBox {
-    background-color:rgba(22, 22, 22, 0.781);
+    background-color: $colorDark;
     bottom:0;
     height:auto;
     padding: 1rem;
@@ -226,7 +228,7 @@ form button:active {
 }
 
 .FooterBox p {
-    color: $colorGreengrey;
+    color: $color1;
     text-align: center;
     padding: 3px;
     margin: 4px auto;
@@ -234,9 +236,9 @@ form button:active {
 
 .FooterBox p a {
     font-style: italic;
-    color: $colorGreen;
+    color: $color7;
     
 }
 .FooterBox p a:hover {
-    color: $colorAccent;
+    color: $color4;
 }

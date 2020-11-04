@@ -1,16 +1,47 @@
-$color1 : rgb(23, 80, 76);
+// P=pressed, T=transparant, L=lighter, D=darker
 
-$colorAccent : rgb(13, 184, 107);
-$colorAccentL : rgb(34, 189, 116);
-$colorAccentD : rgb(42, 153, 103);
+$color1 : rgb(33, 73, 53);
+$color2: rgb(82, 146, 122);
+$color3 : rgb(77, 173, 128);
+$color4 : rgb(66, 192, 133);
+$color5 : rgb(174, 187, 183);
+
+$color6 : rgba(16, 29, 23, 0.85);
+$color7: rgb(48, 59, 57);
 
 $colorDark : rgb(24, 30, 26);
+$colorDarkP : rgb(36, 38, 36);
+$colorDarkT : rgba(24, 30, 26, 0.8);
 $colorDarkL : rgb(39, 48, 44);
-
+$colorGrey : rgb(75, 104, 99);
 $colorGreen : rgb(19, 75, 50);
-$colorGreengrey : rgb(59, 116, 90);
 
-$colorBluegrey : rgb(75, 104, 99);
-$colorBlueL : rgb(13, 231, 148);
+
+
+
 
 $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
+
+
+
+$mz: -moz-;
+$wk : -webkit-;
+
+$bbg : radial-gradient(ellipse at top,  rgb(40, 61, 56) 0%,rgb(37, 48, 50) 70%);
+$hbg : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
+
+// $colorDark : rgb(24, 30, 26);
+// $colorDarkP : rgb(36, 38, 36);
+// $colorDarkT : rgba(24, 30, 26, 0.8);
+// $colorDarkL : rgb(39, 48, 44);
+// $colorGrey : rgb(75, 104, 99);
+// $colorGreengrey : rgb(59, 116, 90);
+// $colorGreen : rgb(19, 75, 50);
+// $colorBlue : rgb(32, 107, 72);
+// $colorBlueD : rgb(23, 80, 63);
+// $colorBlueL : rgb(65, 158, 130);
+
+// // $color1 : rgba(44, 168, 110, 0.8);
+// $colorAccent : rgb(201, 231, 222);// rgb(25, 201, 142);
+// $colorAccentL : #47e0a3;
+// $colorAccentD : rgb(164, 196, 181);
