@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Card = ({id, name, status, species, gender, origin, location, episode}) => {
+const Card = ({id, name, status, species, gender, origin, location}) => {
+ 
     return (
         <div className='Card'>
-            
+         
             <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`}/>
             
             <div className='CardInfo'>
