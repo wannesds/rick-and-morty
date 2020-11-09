@@ -13,6 +13,7 @@ function CardList({ chars }) {
                         name={chars[i].name} 
                         status={chars[i].status}
                         species={chars[i].species}
+                        type={chars[i].type}
                         gender={chars[i].gender}
                         origin={chars[i].origin}
                         location={chars[i].location}

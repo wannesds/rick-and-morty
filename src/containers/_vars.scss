@@ -9,22 +9,44 @@ $color5 : rgb(62, 179, 124);
 $color6 : rgba(16, 29, 23, 0.85);
 $color7: rgb(48, 59, 57);
 
+$colorBG1 :  rgb(45, 83, 74);
+$colorBG2 : rgb(37, 48, 50);
+
 $colorDark : rgb(25, 32, 30);
 $colorDarkP : rgb(33, 37, 36);
 $colorDarkT : rgba(24, 30, 26, 0.8);
 $colorGrey : rgb(75, 104, 99);
 $colorGreen : rgb(19, 75, 50);
 
-
 $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 
+$appBG : radial-gradient(ellipse at top, $colorBG1  0%, $colorBG2 70%);
+$headerBG : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
 
+@mixin browser-comp($prop, $value) {
+    $prop: #{-moz-}$value;
+    $prop: #{-webkit-}$value;
+    $prop: $value;
+}
 
-$mz: -moz-;
-$wk : -webkit-;
+@mixin default-ui {
+    padding: 0.3em;
+    height: 2em;
+    color: $color4; 
+    background-color: $colorDark;
+    border-color: $colorDark;
+    border-radius: 1.5rem;
+    border-style: solid;
+    box-decoration-break: slice;
+    outline: none;
 
-$bbg : radial-gradient(ellipse at top,  rgb(45, 83, 74) 0%,rgb(37, 48, 50) 70%);
-$hbg : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
+    &:hover {
+        background-color: $colorDarkP;
+        border-color: $color4;
+        box-shadow: inset ($color4) 2px 2px 8px;
+    }
+}
+
 
 // $colorDark : rgb(24, 30, 26);
 // $colorDarkP : rgb(36, 38, 36);

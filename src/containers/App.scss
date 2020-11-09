@@ -1,38 +1,27 @@
 /* SINCE ITS A SMALL APP IV DECIDED TO PUT ALL CSS IN 1 FILE EXCEPT FOR VARS & @MEDIA */
 @import './_media';
-@import './_vars'; /*scss variables initiated here*/
-
-body {
-    // background-color:rgb(19, 19, 19);
-}
+@import './_vars'; /*scss vars & mixins initiated here*/
 
 .App {
-    background: $color7;
-    background: #{$mz}$bbg ;
-    background: #{$wk}$bbg ;
-    background: $bbg ;
-    
-    background-size: stretch; 
-    background-repeat: no-repeat;
+    background-color: $color6; //temp failsafe
+    @include browser-comp(background, $appBG);
 }
 
 .HeaderBox {
+    background-color: $colorDark; //temp failsafe
+    @include browser-comp(background, $headerBG);
     display: flex;
     height: 6rem;
-    margin-bottom: 0.5rem;
     padding: 1rem;
-    background: rgb(26, 37, 34);
-    background: #{$mz}$hbg ;
-    background: #{$wk}$hbg ;
-    background: $hbg ;   
 }
 
 .QuoteBox {
     flex-grow: 1;
     margin:auto;
     font-weight: 600;
+
     p {
-        margin:auto 0 auto 0.5rem;
+        margin:auto 0;
         color: $color5;
         &:last-child {
             color:$colorGrey;
@@ -43,51 +32,34 @@ body {
 form { /*filter*/
     align-items: center;
     display: flex;
-    margin-right: 10px;
+
+    button {
+        @include default-ui;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: $colorDark; 
+        text-align: center;
+        &:hover {
+            background-color: $color4;
+            border-color: $color4;
+            color: $colorDark;
+        }
+        &:active {
+            background-color: $color4;
+            border-color: $colorGreen;
+        }
+    }
 }
 
-select, input, button, .ChangePageBox p {
-    padding: 5px;
-    height: 35px;
-    color: $color4; 
-    background-color: $colorDark;
-    border-color: $colorDark;
-    border-radius: 1.5rem;
-    border-style: solid;
-    box-decoration-break: slice;
-}
 select {
-    border-radius: 0;
-    border-style: double;
+    @include default-ui;
+    border-radius: 0;  
 }
+
 input {
+    @include default-ui;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-}
-form button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    background-color: $colorDark; 
-    text-align: center;
-}
-textarea:focus, input:focus, button:focus, select:focus{
-    outline: none;
-}
-
-button:hover, input:hover, select:hover {
-    background-color: $colorDarkP;
-    border-color: $color4;
-    box-shadow: inset ($color4) 2px 2px 8px;   
-}
-
-form button:hover {
-    background-color: $color4;
-    border-color: $color4;
-    color: $colorDark;
-}
-form button:active {
-    background-color: $color4;
-    border-color: $colorGreen;
 }
 
 .ChangePageBox {
@@ -96,28 +68,36 @@ form button:active {
     display:flex;
     justify-content: space-between;
     position: relative;
-}
-.ChangePageBox button{
-    width: 80px;
-    margin:auto 0;
-    background-color: $colorDark;
-}
-.ChangePageBox button:active {
-    border-color: $colorGreen;
-    box-shadow: $shadowDark;
-}
-.ChangePageBox button:disabled {
-    border: none;
-    box-shadow: none;
-    color: $colorGreen;
-}
-.ChangePageBox p {
-    width: 5rem;
-    text-align: center;
-    display: inline-block;
-    margin: auto 0;
-    position: inherit;
-    border-color: $colorDark;
+
+    button {
+        @include default-ui;
+        width: 4.5rem;
+        margin:auto 0;
+        background-color: $colorDark;
+        &:active {
+            border-color: $colorGreen;
+            box-shadow: $shadowDark;
+        }
+        &:disabled {
+            border: none;
+            box-shadow: none;
+            color: $colorGreen;
+        }
+    }
+
+    p {
+        @include default-ui;
+        width: 5rem;
+        text-align: center;
+        display: inline-block;
+        margin: auto 0;
+        position: inherit;
+        &:hover {
+            box-shadow:none;
+            border-color: $colorDark;
+            background-color: $colorDark;
+        }
+    }
 }
 
 .CardListBox {
@@ -141,47 +121,48 @@ form button:active {
 .Card {
     background-color: $colorDarkT;
     color: $colorGrey; 
-    width: 400px;
-    height: 150px;
-    margin: 0.5rem;
-    border-radius: 0.5rem; 
+    width: 22em;
+    height: 7.5em;
+    margin: 0.4em;
+    border-radius: 0.5em; 
     display:flex;
+
+    img {
+        opacity: 100%;
+        height: 7.5em;
+        width: 7.5em;
+        border-top-left-radius:0.5em;
+        border-bottom-left-radius: 0.5em;
+        opacity: 1; //some browser will inherit opacity of .DeadSign
+    }
 }
+
 .CardInfo {
-    width: 250px;
-    padding-left: 5px;
-    padding-top: 5px;
+    width: 22em - 7.5em; //card-img
+    padding: 0.4em;
     display: flex;
     flex-wrap: wrap;
 }
-.Card img {
-    opacity: 100%;
-    height: 150px;
-    width: 150px;
-    border-top-left-radius:0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    opacity: 1;
-}
 
 .Card h3 { //name
-    width: 250px;
-    margin:0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     color: $color4;
 }
-.Card h4, h5 {
+
+.Card span {
     font-weight: 500;
-    font-size:1rem;
+    font-size: 0.9em;
     color: $colorGrey;
-    display:inline-block;
-    margin:auto 0;
-    font-style:italic;
+    display: inline-block;
+    font-style: italic;
 }
 
-.Card h5 { //origin location
-    color: $color2;
-    font-size: 0.9rem;
-    margin-left:5px;
-    margin-top: 1px;
+.Card h4 {
+   color: $colorGreen;
+   margin: 0;
+   padding: 0;
 }
 
 .Card p {
@@ -189,25 +170,28 @@ form button:active {
     display:block;
     height:auto;
     padding:0;
-    margin:0;
-    font-size: 0.9rem;
+    margin-bottom:0;
+    margin-top: auto;
+    font-size: 0.8em;
     text-decoration-line: underline;
-}
 
-.CardInfo .Species {
-    color: rgb(41, 124, 82);
-    font-size: 1rem;
+    span {
+        color: $color2;
+        font-size: 1.1em;
+        margin-left:5px;
+        margin-top: 1px;
+    }
 }
 
 .DeadSign {
-    margin: 15px 60px;
-    width: 120px;
-    height: 120px;
+    margin: 0.4em 4em;
+    width: 6em;
+    height: 6em;
     border-color: $color2;
     background-color: $color2;
     border-radius: 50%;
-    border-style:solid;
-    border-width: 6px;
+    border-style: solid;
+    border-width: 0.3em;
     background-image: url(../skull.png);
     background-size: cover;
     position: absolute;
@@ -215,14 +199,13 @@ form button:active {
 }
 
 .ErrorBox {
-    width:100%;
-    height: 84vh;
+    @extend .CardListBox;
 }
 
 .FooterBox {
     background-color: $colorDark;
-    bottom:0;
-    height:auto;
+    bottom: 0;
+    height: auto;
     padding: 1rem;
     margin-top: 1rem;
 }
@@ -230,15 +213,13 @@ form button:active {
 .FooterBox p {
     color: $color3;
     text-align: center;
-    padding: 3px;
-    margin: 4px auto;
-}
-
-.FooterBox p a {
-    font-style: italic;
-    color: $color2;
-    
-}
-.FooterBox p a:hover {
-    color: $color4;
+    padding: 0.2em;
+    margin: 0.3em auto;
+    a {
+        font-style: italic;
+        color: $color2;
+        &:hover {
+            color: $color4;
+        }
+    }
 }

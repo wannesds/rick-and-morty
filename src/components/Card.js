@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({id, name, status, species, gender, origin, location}) => {
+const Card = ({id, name, status, species, type, gender, origin, location}) => {
  
     return (
         <div className='Card'>
@@ -8,10 +8,20 @@ const Card = ({id, name, status, species, gender, origin, location}) => {
             <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`}/>
             
             <div className='CardInfo'>
-                <h3>{name} <h4>- {gender}</h4></h3>
-                <h5 className='Species'>{species}</h5>
-                <p>Last location:<br></br> <h5>{location.name}</h5></p>
-                <p>Origin:<br></br> <h5>{origin.name}</h5></p>  
+                <h3>
+                    {name} <span>- {gender}</span>
+                </h3>
+
+                <h4>
+                    {species} {type?<span> - {type}</span>:""}
+                </h4>
+
+                <p>
+                    Last seen:<br></br>
+                    <span>{location.name}</span>
+                </p>
+
+                {/* <p>Origin:<br></br> <h5>{origin.name}</h5></p>   */}
                 {status === 'Alive' ? null : <div className='DeadSign'></div>}
             </div>
                       
