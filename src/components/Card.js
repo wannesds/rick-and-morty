@@ -7,22 +7,26 @@ const Card = ({id, name, status, species, type, gender, origin, location}) => {
          
             <img alt='Character' src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`}/>
             
-            <div className='CardInfo'>
+            <div>
                 <h3>
-                    {name} <span>- {gender}</span>
+                    {name} <i>({gender})</i>
                 </h3>
 
-                <h4>
-                    {species} {type?<span> - {type}</span>:""}
-                </h4>
+                <br/>
 
+                <h4>
+                    {species}
+                    <br/>
+                    {type && <i>*{type}*</i>}
+                </h4>
+                
                 <p>
-                    Last seen:<br></br>
-                    <span>{location.name}</span>
+                    Last seen:<br/>
+                    <i>{location.name}</i>
                 </p>
 
                 {/* <p>Origin:<br></br> <h5>{origin.name}</h5></p>   */}
-                {status === 'Alive' ? null : <div className='DeadSign'></div>}
+                {status === 'Alive' ? null : <div className='DeadSign'/>}
             </div>
                       
         </div>
