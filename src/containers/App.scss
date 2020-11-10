@@ -3,16 +3,16 @@
 @import './_vars'; /*scss vars & mixins initiated here*/
 
 .App {
-    background: $appBG; //temp failsafe
-    @include browser-comp(background, $appBG);
+    background: $appBG;
+    // @include browser-comp(background, $appBG);
     display: flex;
     flex-direction:column;
     min-height: 100vh;
 }
 
 .HeaderBox {
-    background: $headerBG; //temp failsafe
-    @include browser-comp(background, $headerBG);
+    background: $headerBG;
+    // @include browser-comp(background, $headerBG);
     display: flex;
     height: 6rem;
     padding: 1rem;
@@ -70,7 +70,6 @@ input {
     width: 16rem;
     display:flex;
     justify-content: space-between;
-    position: relative;
 
     button {
         @include default-ui;
@@ -104,13 +103,14 @@ input {
     }
 }
 
-.CardListBox {
+content {
     width: 97%;
     margin: auto;
-    display: block;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    min-height: 38rem;
 }
 
 .CardList {
@@ -139,10 +139,11 @@ input {
     }
 
     div {
-        padding: 0.3em 0.1em 0.2em 0.4em;
+        padding: 0.3em 0.1em 0.3em 0.4em;
         font-size: 1em;
         display: flex;
         flex-wrap:wrap;
+        justify-content: space-between;
 
         i {
             font-weight: 400;
@@ -154,22 +155,23 @@ input {
             margin: 0;
             color: $color4;
             width: $cardW - $cardH - 2em; //safe space
+            padding-right: 0.2em;
         }
 
         h4 {
-            color: $colorGreen;
+            color: $color2;
             margin: auto 0;
 
             i {
                 font-size:0.9em;
+                margin-left:0.1em;
             }
         }
 
         p {
             display:flex;
             flex-direction: column;
-            align-self: flex-end;
-            margin-top:0;
+            margin-top: auto;
             margin-bottom: 0;
             font-size: 0.8em;
 
@@ -201,7 +203,7 @@ input {
 }
 
 .ErrorBox {
-    @extend .CardListBox;
+    @extend content;
 }
 
 .FooterBox {

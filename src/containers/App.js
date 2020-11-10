@@ -41,7 +41,7 @@ function App() {
       {/* check first if loading, then check if error, then show content */}
       { isLoading ? <div className="ErrorBox">Loading ...</div> : 
         data.error || isError ? <div className="ErrorBox">You fucked up Morty!</div> :
-          <div className="CardListBox">
+          <content>
 
             <ChangePage 
               prevPage={() => setUrl(data.info.prev)} 
@@ -58,7 +58,7 @@ function App() {
               info={data.info}
               url={url}
             />
-          </div>     
+          </content>     
       }
 
       <Footer/>

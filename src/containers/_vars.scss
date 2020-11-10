@@ -26,11 +26,11 @@ $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 $appBG : radial-gradient(ellipse at top, $colorBG1  0%, $colorBG2 70%);
 $headerBG : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
 
-@mixin browser-comp($prop, $value) {
-    $prop: #{-moz-}$value;
-    $prop: #{-webkit-}$value;
-    $prop: $value;
-}
+// @mixin browser-comp($prop, $value) {
+//     #{$prop}: #{-moz-}$value;
+//     #{$prop}: #{-webkit-}$value;
+//     #{$prop}: $value;
+// }
 
 @mixin default-ui {
     padding: 0.3em;
@@ -40,7 +40,6 @@ $headerBG : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
     border-color: $colorDark;
     border-radius: 1.5rem;
     border-style: solid;
-    box-decoration-break: slice;
     outline: none;
 
     &:hover {
