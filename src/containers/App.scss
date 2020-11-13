@@ -69,8 +69,8 @@ select {
 input {
     @include default-ui;
     width: 5rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
     transition: width 0.3s ease-in-out;
     &:focus {
         width: 9rem;
