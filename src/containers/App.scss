@@ -1,18 +1,18 @@
 /* SINCE ITS A SMALL APP IV DECIDED TO PUT ALL CSS IN 1 FILE EXCEPT FOR VARS & @MEDIA */
-@import './_media';
+
 @import './_vars'; /*scss vars & mixins initiated here*/
 
 .App {
-    background: $appBG;
-    // @include browser-comp(background, $appBG);
-    display: flex;
-    flex-direction:column;
+    background: -moz-radial-gradient(center, ellipse cover, $colorBG1  0%, $colorBG2 70%);
+    background: -webkit-radial-gradient(center, ellipse cover, $colorBG1  0%, $colorBG2 70%);
+    background: radial-gradient(ellipse at top, $colorBG1  0%, $colorBG2 70%);
     min-height: 100vh;
 }
 
 .HeaderBox {
-    background: $headerBG;
-    // @include browser-comp(background, $headerBG);
+    background: -moz-linear-gradient(-45deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
+    background: -webkit-linear-gradient(-45deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
+    background: linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
     display: flex;
     height: 6rem;
     padding: 1rem;
@@ -26,15 +26,18 @@
     p {
         margin:auto 0;
         color: $color5;
+        font-size: 1.4em;
         &:last-child {
             color:$colorGrey;
+            font-size: 1em;
         }
     }
 }
-
-form { /*filter*/
+// FILTER
+form { 
     align-items: center;
     display: flex;
+    padding: 0;
 
     button {
         @include default-ui;
@@ -56,24 +59,45 @@ form { /*filter*/
 
 select {
     @include default-ui;
-    border-radius: 0;  
+    border-radius: 0;
+    text-align: center;
+    margin: auto;
+    -moz-appearance: none;
 }
+
 
 input {
     @include default-ui;
+    width: 5rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    transition: width 0.3s ease-in-out;
+    &:focus {
+        width: 9rem;
+    }
+}
+///CONTENT
+
+content {
+    width: 97%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    // min-height: 38rem;
+    min-height: 90vh;
 }
 
 .ChangePageBox {
-    margin: 1rem auto;
-    width: 16rem;
+    margin: 1em auto;
+    width: 16em;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     button {
         @include default-ui;
-        width: 4.5rem;
+        width: 4.5em;
         margin:auto 0;
         background-color: $colorDark;
         &:active {
@@ -90,7 +114,7 @@ input {
 
     p {
         @include default-ui;
-        width: 5rem;
+        width: 5em;
         text-align: center;
         display: inline-block;
         margin: auto 0;
@@ -101,16 +125,6 @@ input {
             background-color: $colorDark;
         }
     }
-}
-
-content {
-    width: 97%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 38rem;
 }
 
 .CardList {
@@ -128,17 +142,18 @@ content {
     margin: 0.4em;
     border-radius: 0.5em; 
     display: flex;
-    font-size: $cardFont;
+    font-size: 0.9em;
 
     img {
-        opacity: 100%;
-        height: $cardH;
         width: $cardH;
+        min-width: $cardH; //to prevent a bug on some browsers
+        height: $cardH;
+        flex-shrink: 0; //otherwise imgs get init skewed on firefox
         border-top-left-radius:0.5em;
         border-bottom-left-radius: 0.5em;
     }
 
-    div {
+    div { //all written card info
         padding: 0.3em 0.1em 0.3em 0.4em;
         font-size: 1em;
         display: flex;
@@ -181,7 +196,6 @@ content {
                 font-size: 1.1em;
                 margin-left:0.4em;
                 margin-top: 0.1em;
-               
             }
         }
     }
@@ -191,7 +205,7 @@ content {
     margin: 0.1em 2.2em;
     width: $cardH - 1em;
     height: $cardH - 1em;
-    border-color: $color2;
+    border-color: $color2 0.5;
     background-color: $color2;
     border-radius: 50%;
     border-style: solid;
@@ -205,7 +219,7 @@ content {
 .ErrorBox {
     @extend content;
 }
-
+//FOOTER
 .FooterBox {
     background-color: $colorDark;
     width: 100%;
@@ -227,3 +241,6 @@ content {
         }
     }
 }
+
+
+@import './_media';

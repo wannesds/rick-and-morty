@@ -16,7 +16,13 @@ function Filter({getQuery}) {
     }
     return (
         <form>
-            <input name="name" type='text' onChange={e => setName(e.target.value)} placeholder='search by name'/>
+            <input 
+                name="name" 
+                type='search' 
+                onChange={e => setName(e.target.value)} 
+                placeholder='search by name'
+                autocomplete="off"
+            />
 
             <select name="gender" onChange={e => setGender(e.target.value)}>
                 <option value="">-</option>
@@ -30,7 +36,7 @@ function Filter({getQuery}) {
                 <option value="dead">dead</option>
             </select>
 
-            <button onClick={makeQuery}>Scan</button>
+            <button onClick={makeQuery} type="submit">scan</button>
         </form>
 
     );

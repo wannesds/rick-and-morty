@@ -1,7 +1,7 @@
 // P=pressed, T=transparant, L=lighter, D=darker, BG=background, W=width
 $cardW : 22em;
 $cardH: 9em;
-$cardFont: 1em;
+$cardFont: 1rem;
 
 $color1 : rgb(33, 73, 53);
 $color2: rgb(82, 146, 122);
@@ -23,29 +23,22 @@ $colorGreen : rgb(19, 75, 50);
 
 $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 
-$appBG : radial-gradient(ellipse at top, $colorBG1  0%, $colorBG2 70%);
-$headerBG : linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
-
-// @mixin browser-comp($prop, $value) {
-//     #{$prop}: #{-moz-}$value;
-//     #{$prop}: #{-webkit-}$value;
-//     #{$prop}: $value;
-// }
-
 @mixin default-ui {
-    padding: 0.3em;
-    height: 2em;
+    padding: 0.1em;
+    height: 2.2em;
     color: $color4; 
     background-color: $colorDark;
     border-color: $colorDark;
-    border-radius: 1.5rem;
+    border-radius: 1.5em;
     border-style: solid;
     outline: none;
-
-    &:hover {
+    // &:hover {
+    //     background-color: $colorDarkP;
+    //     border-color: $color4;
+    //     box-shadow: inset  1px 1px 6px 1px ($color4);
+    // }
+    &:active {
         background-color: $colorDarkP;
-        border-color: $color4;
-        box-shadow: inset ($color4) 2px 2px 8px;
     }
 }
 
