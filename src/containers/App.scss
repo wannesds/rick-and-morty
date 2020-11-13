@@ -20,7 +20,7 @@
 
 .QuoteBox {
     flex-grow: 1;
-    margin:auto;
+    margin: auto;
     font-weight: 600;
 
     p {
@@ -115,6 +115,7 @@ content {
     p {
         @include default-ui;
         width: 5em;
+        padding-top: 0.3em;
         text-align: center;
         display: inline-block;
         margin: auto 0;

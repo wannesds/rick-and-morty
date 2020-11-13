@@ -8,12 +8,16 @@
         padding: 0.2rem;
         margin-bottom: 0;
     }
+    .QuoteBox {
+        flex-grow: 0;
+        margin:auto 2em;
+    }
     form {
         margin:0 auto;
         padding: 0;
         // background-color: red;
         select, input, button {
-            margin:0;
+            margin: 0;
         }
     }
     content {
@@ -22,9 +26,10 @@
     }
     .ChangePageBox {
         margin: 0 auto;
+        width: 20em;
         font-size: 1.2em;
         button, p {
-            width: 4em;
+            width: 6em;
         }
     }
     .Card {
