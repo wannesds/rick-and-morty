@@ -13,7 +13,7 @@ function Header({url}) {
         <div className="QuoteBox">
             <p className="f3 i">{quotes[id].quote}</p>
             {/* <img className="" alt='Character' src={quotes[id].picture} width='50px'/> */}
-            <p className="f5 pa1">- {quotes[id].name}</p>
+            <p className="f5">- {quotes[id].name}</p>
         </div>  
     )
 }

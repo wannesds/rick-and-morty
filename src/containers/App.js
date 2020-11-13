@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+// import './App.css'; /*delete when done w moving over css to sass*/ 
+import './App.scss';
 import CardList from '../components/CardList';
 import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
@@ -40,7 +41,7 @@ function App() {
       {/* check first if loading, then check if error, then show content */}
       { isLoading ? <div className="ErrorBox">Loading ...</div> : 
         data.error || isError ? <div className="ErrorBox">You fucked up Morty!</div> :
-          <div className="CardListBox">
+          <content>
 
             <ChangePage 
               prevPage={() => setUrl(data.info.prev)} 
@@ -57,7 +58,7 @@ function App() {
               info={data.info}
               url={url}
             />
-          </div>     
+          </content>     
       }
 
       <Footer/>

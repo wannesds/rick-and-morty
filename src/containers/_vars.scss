@@ -1,0 +1,60 @@
+// P=pressed, T=transparant, L=lighter, D=darker, BG=background, W=width
+$cardW : 22em;
+$cardH: 9em;
+$cardFont: 1rem;
+
+$color1 : rgb(33, 73, 53);
+$color2: rgb(82, 146, 122);
+$color3 : rgb(77, 173, 128);
+$color4 : rgb(66, 192, 133);
+$color5 : rgb(62, 179, 124);
+
+$color6 : rgba(16, 29, 23, 0.85);
+$color7: rgb(48, 59, 57);
+
+$colorBG1 :  rgb(45, 83, 74);
+$colorBG2 : rgb(37, 48, 50);
+
+$colorDark : rgb(25, 32, 30);
+$colorDarkP : rgb(33, 37, 36);
+$colorDarkT : rgba(24, 30, 26, 0.8);
+$colorGrey : rgb(75, 104, 99);
+$colorGreen : rgb(19, 75, 50);
+
+$shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
+
+@mixin default-ui {
+    padding: 0.1em;
+    height: 2.2em;
+    color: $color4; 
+    background-color: $colorDark;
+    border-color: $colorDark;
+    border-radius: 1.5em;
+    border-style: solid;
+    outline: none;
+    // &:hover {
+    //     background-color: $colorDarkP;
+    //     border-color: $color4;
+    //     box-shadow: inset  1px 1px 6px 1px ($color4);
+    // }
+    &:active {
+        background-color: $colorDarkP;
+    }
+}
+
+
+// $colorDark : rgb(24, 30, 26);
+// $colorDarkP : rgb(36, 38, 36);
+// $colorDarkT : rgba(24, 30, 26, 0.8);
+// $colorDarkL : rgb(39, 48, 44);
+// $colorGrey : rgb(75, 104, 99);
+// $colorGreengrey : rgb(59, 116, 90);
+// $colorGreen : rgb(19, 75, 50);
+// $colorBlue : rgb(32, 107, 72);
+// $colorBlueD : rgb(23, 80, 63);
+// $colorBlueL : rgb(65, 158, 130);
+
+// // $color1 : rgba(44, 168, 110, 0.8);
+// $colorAccent : rgb(201, 231, 222);// rgb(25, 201, 142);
+// $colorAccentL : #47e0a3;
+// $colorAccentD : rgb(164, 196, 181);
