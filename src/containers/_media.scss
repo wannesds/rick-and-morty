@@ -1,3 +1,6 @@
+/*changes should be automated by 
+only editing font-sizes on elements*/
+
 @media (max-width: 900px) {
     .HeaderBox {
         flex-wrap: wrap;
@@ -35,12 +38,13 @@
         }
     }
     .Card {
-        width: 75vw;
+        width: 85vw;
+        font-size:0.8em;
         div {
-            font-size: 1.3em;
+            font-size: 1.4em;
         }
         .DeadSign {
-            font-size: 0.9em;
+            font-size: 0.8em;
             right: 9vw;
         }
     }   
