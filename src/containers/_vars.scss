@@ -23,25 +23,6 @@ $colorGreen : rgb(19, 75, 50);
 
 $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 
-@mixin default-ui {
-    padding: 0.2em;
-    height: 2.2em;
-    color: $color4; 
-    background-color: $colorDark;
-    border-color: $colorDark;
-    border-radius: 1.5em;
-    border-style: solid;
-    outline: none;
-    // &:hover {
-    //     background-color: $colorDarkP;
-    //     border-color: $color4;
-    //     box-shadow: inset  1px 1px 6px 1px ($color4);
-    // }
-    &:active {
-        background-color: $colorDarkP;
-    }
-}
-
 
 // $colorDark : rgb(24, 30, 26);
 // $colorDarkP : rgb(36, 38, 36);
