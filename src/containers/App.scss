@@ -164,64 +164,76 @@ content {
         padding: 0.3em 0.1em 0.3em 0.4em;
         font-size: 1em;
         display: flex;
-        flex-wrap:wrap;
+        flex-direction: column;
         justify-content: space-between;
 
-        i {
+        i { //default i
+            //gender
             font-weight: 400;
             font-size: 0.8em;
             color: $colorGrey;
+            // background-color:rgba(255, 251, 0, 0.288);
+
         }
 
         h3 { //name
             margin: 0;
             color: $color4;
-            width: 22em - 9em - 2em; //safe space
+            width: auto; //safe space
+            height: auto;
             padding-right: 0.2em;
+            // background-color:rgba(255, 0, 0, 0.288);
         }
 
-        h4 {
+        h4 { //species
             color: $color2;
             margin: auto 0;
+            // background-color:rgba(4, 0, 255, 0.13);
 
-            i {
+
+            i { //type
                 font-size:0.9em;
                 margin-left:0.1em;
+                // background-color:rgba(212, 0, 255, 0.103);
             }
         }
 
-        p {
+        p { //'last seen:"
             display:flex;
             flex-direction: column;
             margin-top: auto;
             margin-bottom: 0;
             font-size: 0.8em;
+            // background-color:rgba(9, 255, 0, 0.123);
 
-            i {
+
+            i { //location
                 width: 22em - 9em;
                 color: $color2;
                 font-size: 1.1em;
                 margin-left:0.4em;
                 margin-top: 0.1em;
+                // background-color:rgba(0, 255, 221, 0.171);
+
             }
         }
     }
+    .DeadSign {
+        margin: 0.1em 2.2em;
+        width: 7em;
+        height: 7em;
+        border-color: $color2 0.5;
+        background-color: $color2;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.3em;
+        background-image: url(../skull.png);
+        background-size: cover;
+        position: absolute;
+        opacity: 0.1;
+    }
 }
 
-.DeadSign {
-    margin: 0.1em 2.2em;
-    width: 5em;
-    height: 5em;
-    border-color: $color2 0.5;
-    background-color: $color2;
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 0.3em;
-    background-image: url(../skull.png);
-    background-size: cover;
-    position: absolute;
-    opacity: 0.1;
-}
 
 .ErrorBox {
     @extend content;
@@ -233,6 +245,7 @@ content {
     padding: 1rem;
     margin-top: 0;
     align-self: flex-end;
+    position: absolute;
 }
 
 .FooterBox p {

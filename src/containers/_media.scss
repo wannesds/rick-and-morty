@@ -3,9 +3,10 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        height: 8rem;
+        height: 8.5rem;
         font-size: 0.9rem;
         padding: 0.2rem;
+        margin-top: 0.1rem;
         margin-bottom: 0;
     }
     .QuoteBox {
@@ -34,15 +35,13 @@
         }
     }
     .Card {
-        width: 26em;
-        height: 12em;
-        img {
-            height: 12em;
-            width: 12em;
-        }
+        width: 75vw;
         div {
             font-size: 1.3em;
-            // background:red;
+        }
+        .DeadSign {
+            font-size: 0.9em;
+            right: 9vw;
         }
     }   
 }
