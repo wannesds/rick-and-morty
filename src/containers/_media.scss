@@ -4,7 +4,7 @@
         flex-direction: column;
         justify-content: center;
         height: 8rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 0.2rem;
         margin-bottom: 0;
     }
@@ -23,20 +23,26 @@
     }
     content {
         width: 100%;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
     .ChangePageBox {
         margin: 0.2em auto;
         width: 20em;
-        font-size: 1.2em;
+        font-size: 1em;
         button, p {
             width: 6em;
         }
     }
     .Card {
         width: 26em;
+        height: 12em;
+        img {
+            height: 12em;
+            width: 12em;
+        }
         div {
-            font-size: 1.2em;
+            font-size: 1.3em;
+            // background:red;
         }
     }   
 }

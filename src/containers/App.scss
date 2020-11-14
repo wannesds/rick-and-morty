@@ -144,17 +144,17 @@ content {
 .Card {
     background-color: $colorDarkT;
     color: $colorGrey; 
-    width: $cardW;
-    height: $cardH;
+    width: 22em;
+    height: 9em;
     margin: 0.4em;
     border-radius: 0.5em; 
     display: flex;
     font-size: 0.9em;
 
     img {
-        width: $cardH;
-        min-width: $cardH; //to prevent a bug on some browsers
-        height: $cardH;
+        width: 9em;
+        min-width: 9em; //to prevent a bug on some browsers
+        height: 9em;
         flex-shrink: 0; //otherwise imgs get init skewed on firefox
         border-top-left-radius:0.5em;
         border-bottom-left-radius: 0.5em;
@@ -176,7 +176,7 @@ content {
         h3 { //name
             margin: 0;
             color: $color4;
-            width: $cardW - $cardH - 2em; //safe space
+            width: 22em - 9em - 2em; //safe space
             padding-right: 0.2em;
         }
 
@@ -198,7 +198,7 @@ content {
             font-size: 0.8em;
 
             i {
-                width: $cardW - $cardH;
+                width: 22em - 9em;
                 color: $color2;
                 font-size: 1.1em;
                 margin-left:0.4em;
@@ -210,8 +210,8 @@ content {
 
 .DeadSign {
     margin: 0.1em 2.2em;
-    width: $cardH - 1em;
-    height: $cardH - 1em;
+    width: 5em;
+    height: 5em;
     border-color: $color2 0.5;
     background-color: $color2;
     border-radius: 50%;
