@@ -1,25 +1,7 @@
 /* SINCE ITS A SMALL APP IV DECIDED TO PUT ALL CSS IN 1 FILE EXCEPT FOR VARS & @MEDIA */
 
-@import './_vars'; /*scss vars initiated here*/
+@import './_vars'; /*scss vars and mixins initiated here*/
 
-@mixin default-ui {
-    padding: 0.2em;
-    height: 2.2em;
-    color: $color4; 
-    background-color: $colorDark;
-    border-color: $colorDark;
-    border-radius: 1.5em;
-    border-style: solid;
-    outline: none;
-    // &:hover {
-    //     background-color: $colorDarkP;
-    //     border-color: $color4;
-    //     box-shadow: inset  1px 1px 6px 1px ($color4);
-    // }
-    &:active {
-        background-color: $colorDarkP;
-    }
-}
 
 .App {
     background: -moz-radial-gradient(center, ellipse cover, $colorBG1  0%, $colorBG2 70%);
@@ -87,9 +69,11 @@ select {
 
 input {
     @include default-ui;
+    @include browser-fix(border-top-right-radius, 0);
+    @include browser-fix(border-bottom-right-radius, 0);
     width: 5rem;
-    border-top-right-radius: 0em;
-    border-bottom-right-radius: 0em;
+    // border-top-right-radius: 0em;
+    // border-bottom-right-radius: 0em;
     transition: width 0.3s ease-in-out;
     &:focus {
         width: 9rem;
