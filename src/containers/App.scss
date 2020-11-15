@@ -51,6 +51,7 @@ form {
             background-color: $color4;
             border-color: $color4;
             color: $colorDark;
+            cursor: pointer;
         }
         &:active {
             background-color: $color4;
@@ -73,6 +74,9 @@ select {
     &:last-of-type {
         background-position: 2.6em 0.5em;
         width: 4.1em;
+    }
+    &:hover {
+        cursor: pointer;
     }
 }
 
