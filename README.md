@@ -1,3 +1,8 @@
+wannesds.github.io/rick-and-morty
+exploring React and Api usage 
+Readme update soon
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
