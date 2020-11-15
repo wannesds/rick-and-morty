@@ -47,16 +47,36 @@ form {
         border-bottom-left-radius: 0;
         background-color: $colorDark; 
         text-align: center;
+        width: 2.5em;
+        background-image:url(../searchloop.png);
+        background-repeat: no-repeat;
+        background-size: 65%;
+        background-position: 0.2em 0.3em;
         &:hover {
             background-color: $color4;
             border-color: $color4;
             color: $colorDark;
-            cursor: pointer;
+            background-image:url(../searchloop-D.png);
         }
         &:active {
             background-color: $color4;
             border-color: $colorGreen;
         }
+    }
+}
+
+
+input { //[BUG]ios still makes right corners round :C 
+    @include default-ui;
+    @include browser-fix(border-top-right-radius, 0);
+    @include browser-fix(border-bottom-right-radius, 0);  
+    border-radius:0;
+    border-top-left-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    width: 5rem;
+    transition: width 0.3s ease-in-out;
+    &:focus {
+        width: 9rem;
     }
 }
 
@@ -75,25 +95,8 @@ select {
         background-position: 2.6em 0.5em;
         width: 4.1em;
     }
-    &:hover {
-        cursor: pointer;
-    }
 }
 
-
-input { //[BUG]ios still makes right corners round :C 
-    @include default-ui;
-    @include browser-fix(border-top-right-radius, 0);
-    @include browser-fix(border-bottom-right-radius, 0);  
-    border-radius:0;
-    border-top-left-radius: 1.5em;
-    border-bottom-left-radius: 1.5em;
-    width: 5rem;
-    transition: width 0.3s ease-in-out;
-    &:focus {
-        width: 9rem;
-    }
-}
 ///CONTENT
 
 content {
@@ -143,6 +146,7 @@ content {
             box-shadow: none;
             border-color: $colorDark;
             background-color: $colorDark;
+            cursor: default;
         }
     }
 }
@@ -217,7 +221,7 @@ content {
             margin-top: auto;
             margin-bottom: 0;
             font-size: 0.8em;
-            background-color:rgba(9, 255, 0, 0.123);
+            // background-color:rgba(9, 255, 0, 0.123);
 
 
             i { //location
@@ -225,7 +229,7 @@ content {
                 font-size: 1.1em;
                 margin-left:0.4em;
                 margin-top: 0.1em;
-                background-color:rgba(0, 255, 221, 0.171);
+                // background-color:rgba(0, 255, 221, 0.171);
 
             }
         }
