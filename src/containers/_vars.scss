@@ -40,7 +40,7 @@ $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 }
 
 @mixin browser-fix($name, $value) {
-    -oz-#{$name} : $value;
+    -o-#{$name} : $value;
     -webkit-#{$name} : $value;
     #{$name} : $value;
 }

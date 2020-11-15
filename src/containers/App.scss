@@ -64,14 +64,15 @@ select {
     border-radius: 0;
     text-align: center;
     margin: auto;
-    -moz-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
 }
 
 
 input {
     @include default-ui;
-    // @include browser-fix(border-top-right-radius, 0);
-    // @include browser-fix(border-bottom-right-radius, 0);  
+    @include browser-fix(border-top-right-radius, 0);
+    @include browser-fix(border-bottom-right-radius, 0);  
     border-radius:0;
     border-top-left-radius: 1.5em;
     border-bottom-left-radius: 1.5em;
