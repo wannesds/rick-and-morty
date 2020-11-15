@@ -1,6 +1,7 @@
 /* SINCE ITS A SMALL APP IV DECIDED TO PUT ALL CSS IN 1 FILE EXCEPT FOR VARS & @MEDIA */
+/* ALL MAIN PARTS  */
+@import './_vars'; /*scss vars and mixins initiated here*/
 
-@import './_vars'; /*scss vars & mixins initiated here*/
 
 .App {
     background: -moz-radial-gradient(center, ellipse cover, $colorBG1  0%, $colorBG2 70%);
@@ -10,18 +11,39 @@
 }
 
 .HeaderBox {
+    height: 4.5rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    background-color: $colorDark;
+    h1 {
+        font-size: 2.5em;
+        margin:auto;
+        color: $color5;
+        text-align: center;
+        font-family: $font1;
+        letter-spacing: 2px;
+        font-weight: 10;
+        &:hover {
+            color: $color4;
+        }
+    }
+}
+
+.Nav {
     background: -moz-linear-gradient(-45deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
     background: -webkit-linear-gradient(-45deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
     background: linear-gradient(170deg, $color6 20%,rgba(0, 0, 0, 0) 70%);
     display: flex;
     height: 6rem;
     padding: 1rem;
+    padding-left: 2rem;
 }
 
 .QuoteBox {
     flex-grow: 1;
-    margin:auto;
+    margin: auto;
     font-weight: 600;
+    overflow: hidden;
 
     p {
         margin:auto 0;
@@ -45,10 +67,16 @@ form {
         border-bottom-left-radius: 0;
         background-color: $colorDark; 
         text-align: center;
+        width: 2.5em;
+        background-image:url(../searchloop.png);
+        background-repeat: no-repeat;
+        background-size: 65%;
+        background-position: 0.2em 0.3em;
         &:hover {
             background-color: $color4;
             border-color: $color4;
             color: $colorDark;
+            background-image:url(../searchloop-D.png);
         }
         &:active {
             background-color: $color4;
@@ -57,25 +85,38 @@ form {
     }
 }
 
-select {
-    @include default-ui;
-    border-radius: 0;
-    text-align: center;
-    margin: auto;
-    -moz-appearance: none;
-}
 
-
-input {
+input { //[BUG]ios still makes right corners round :C 
     @include default-ui;
-    width: 5rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    @include browser-fix(border-top-right-radius, 0);
+    @include browser-fix(border-bottom-right-radius, 0);  
+    border-radius:0;
+    border-top-left-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    width: 5em;
     transition: width 0.3s ease-in-out;
     &:focus {
-        width: 9rem;
+        width: 9em;
     }
 }
+
+select {
+    @include browser-fix(appearance, none);
+    @include default-ui;
+    text-align: center;
+    margin: auto;
+    width: 4.3em;
+    border-radius: 0;
+    background-image: url(../arrow-doubledropdown.png);
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    background-position: 3.2em 0.5em;
+    &:last-of-type {
+        background-position: 2.6em 0.5em;
+        width: 4.1em;
+    }
+}
+
 ///CONTENT
 
 content {
@@ -86,7 +127,8 @@ content {
     align-items: center;
     justify-content: space-between;
     // min-height: 38rem;
-    min-height: 90vh;
+    // min-height: 90vh;
+    height:auto;
 }
 
 .ChangePageBox {
@@ -114,7 +156,8 @@ content {
 
     p {
         @include default-ui;
-        width: 5em;
+        width: 6em;
+        padding-top: 0.3em;
         text-align: center;
         display: inline-block;
         margin: auto 0;
@@ -123,6 +166,7 @@ content {
             box-shadow: none;
             border-color: $colorDark;
             background-color: $colorDark;
+            cursor: default;
         }
     }
 }
@@ -137,17 +181,17 @@ content {
 .Card {
     background-color: $colorDarkT;
     color: $colorGrey; 
-    width: $cardW;
-    height: $cardH;
+    width: 22em;
+    height: 9em;
     margin: 0.4em;
     border-radius: 0.5em; 
     display: flex;
     font-size: 0.9em;
 
     img {
-        width: $cardH;
-        min-width: $cardH; //to prevent a bug on some browsers
-        height: $cardH;
+        width: 9em;
+        min-width: 9em; //to prevent a bug on some browsers
+        height: 9em;
         flex-shrink: 0; //otherwise imgs get init skewed on firefox
         border-top-left-radius:0.5em;
         border-bottom-left-radius: 0.5em;
@@ -157,64 +201,77 @@ content {
         padding: 0.3em 0.1em 0.3em 0.4em;
         font-size: 1em;
         display: flex;
-        flex-wrap:wrap;
+        flex-direction: column;
         justify-content: space-between;
+        font-family: 'Cousine', monospace;
 
-        i {
+
+        i { //default i
+            //gender
             font-weight: 400;
             font-size: 0.8em;
             color: $colorGrey;
+            // background-color:rgba(255, 251, 0, 0.288);
+
         }
 
         h3 { //name
             margin: 0;
             color: $color4;
-            width: $cardW - $cardH - 2em; //safe space
+            width: auto; //safe space
+            height: auto;
             padding-right: 0.2em;
+            // background-color:rgba(255, 0, 0, 0.288);
         }
 
-        h4 {
+        h4 { //species
             color: $color2;
             margin: auto 0;
+            // background-color:rgba(4, 0, 255, 0.13);
 
-            i {
+
+            i { //type
                 font-size:0.9em;
                 margin-left:0.1em;
+                // background-color:rgba(212, 0, 255, 0.103);
             }
         }
 
-        p {
+        p { //'last seen:"
             display:flex;
             flex-direction: column;
             margin-top: auto;
             margin-bottom: 0;
             font-size: 0.8em;
+            // background-color:rgba(9, 255, 0, 0.123);
 
-            i {
-                width: $cardW - $cardH;
+
+            i { //location
                 color: $color2;
                 font-size: 1.1em;
                 margin-left:0.4em;
                 margin-top: 0.1em;
+                // background-color:rgba(0, 255, 221, 0.171);
+
             }
         }
     }
+    .DeadSign {
+        margin: 0.4em 2.4em;
+        width: 7em;
+        height: 7em;
+        border-color: $color2 0.5;
+        background-color: $color2;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.3em;
+        background-image: url(../skull.png);
+        background-size: cover;
+        position: absolute;
+        opacity: 0.1;
+    }
 }
 
-.DeadSign {
-    margin: 0.1em 2.2em;
-    width: $cardH - 1em;
-    height: $cardH - 1em;
-    border-color: $color2 0.5;
-    background-color: $color2;
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 0.3em;
-    background-image: url(../skull.png);
-    background-size: cover;
-    position: absolute;
-    opacity: 0.1;
-}
 
 .ErrorBox {
     @extend content;
@@ -226,6 +283,7 @@ content {
     padding: 1rem;
     margin-top: 0;
     align-self: flex-end;
+    position: absolute;
 }
 
 .FooterBox p {

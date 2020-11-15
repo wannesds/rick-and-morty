@@ -36,7 +36,7 @@ function Filter({getQuery}) {
                 <option value="dead">dead</option>
             </select>
 
-            <button onClick={makeQuery} type="submit">scan</button>
+            <button onClick={makeQuery} type="submit"></button>
         </form>
 
     );

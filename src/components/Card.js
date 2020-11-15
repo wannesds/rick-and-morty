@@ -12,11 +12,10 @@ const Card = ({id, name, status, species, type, gender, origin, location}) => {
                     {name} <i>({gender})</i>
                 </h3>
 
-                <br/>
+                
 
                 <h4>
                     {species}
-                    <br/>
                     {type && <i>*{type}*</i>}
                 </h4>
                 

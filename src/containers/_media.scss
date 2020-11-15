@@ -1,36 +1,98 @@
+
+
+
+@media (min-width: 1920px) {
+    content, form, .Nav {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1500px) {
+    content, form, .Nav {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Nav {
+        height: 8.5rem;
+    }
+}
+
 @media (max-width: 900px) {
-    .HeaderBox {
+    .Nav {
+        height: 9.5rem;    
+    }
+    content, form, .Nav {
+        font-size: 0.95rem;
+    }
+
+}
+
+@media (max-width: 667px) {
+    
+    .Nav {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        height: 8rem;
-        font-size: 0.8rem;
+        height: 10rem;
+        font-size: 0.9rem;
         padding: 0.2rem;
+        margin-top: 0.1rem;
         margin-bottom: 0;
+    }
+    .QuoteBox {
+        flex-grow: 0;
+        width: 90vw;
+        margin:auto;
     }
     form {
         margin:0 auto;
         padding: 0;
         // background-color: red;
         select, input, button {
-            margin:0;
+            margin: 0;
         }
+    }
+    .ChangePageBox {
+        margin: 0.2em auto;
+        width: 20em;
+        margin-top: 0.3em;
+        // font-size: 1em;
+    }   
+    content, .HeaderBox {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 550px) {
+    input:focus {
+       width: 7em;
     }
     content {
         width: 100%;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
-    .ChangePageBox {
-        margin: 0 auto;
-        font-size: 1.2em;
-        button, p {
-            width: 4em;
-        }
-    }
+    
     .Card {
-        width: 26em;
+        width: 85vw;
+        font-size:0.8em;
         div {
-            font-size: 1.2em;
+            font-size: 1.4em;
         }
-    }   
+        .DeadSign {
+            font-size: 0.8em;
+            margin-top: 0.2em;
+            right: 0.8em;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .Nav {
+        height: 11rem;
+    }
+    content, .HeaderBox {
+        font-size: 0.7em;
+    }
 }
