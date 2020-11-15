@@ -1,4 +1,6 @@
 // P=pressed, T=transparant, L=lighter, D=darker, BG=background, W=width
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
 
 $color1 : rgb(33, 73, 53);
 $color2: rgb(82, 146, 122);
@@ -20,6 +22,10 @@ $colorGreen : rgb(19, 75, 50);
 
 $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
 
+$font1 : 'Gloria Hallelujah', cursive;
+$font2 : 'Cousine', monospace;
+
+
 @mixin browser-fix($name, $value) {
     #{$name} : $value;
     -o-#{$name} : $value;
@@ -35,6 +41,7 @@ $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
     border-radius: 1.5em;
     border-style: solid;
     outline: none;
+    
     // &:hover {
     //     background-color: $colorDarkP;
     //     border-color: $color4;
@@ -45,6 +52,7 @@ $shadowDark : inset rgba(2, 29, 20, 0.842) 2px 2px 8px;
     }
     &:hover {
         cursor: pointer;
+        background-color: $colorDarkP;
     }
 }
 

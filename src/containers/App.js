@@ -5,8 +5,9 @@ import CardList from '../components/CardList';
 import ChangePage from '../components/ChangePage';
 // import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
-import Header from '../components/Header';
+import Quote from '../components/Quote';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 function App() {
   const [data, setData] = useState({results: [], info: []})
@@ -32,8 +33,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="HeaderBox">
-        <Header url={url}/>
+
+      <Header/>
+
+      <div className="Nav">
+        <Quote url={url}/>
         <Filter getQuery={(r) => setUrl(`https://rickandmortyapi.com/api/character/${r}`)}/>
       </div>
       
@@ -58,13 +62,13 @@ function App() {
               info={data.info}
               url={url}
             />
-          </content>     
-      }
 
+          </content> }
+        
       <Footer/>
+
     </div>
   )
-
 }
 
 //OLD CODE 
