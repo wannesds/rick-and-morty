@@ -1,12 +1,14 @@
-/*changes should be automated by 
-only editing font-sizes on elements*/
-
 @media (max-width: 900px) {
+
+}
+
+
+@media (max-width: 500px) {
     .HeaderBox {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        height: 8.5rem;
+        height: 9.5rem;
         font-size: 0.9rem;
         padding: 0.2rem;
         margin-top: 0.1rem;
@@ -45,7 +47,12 @@ only editing font-sizes on elements*/
         }
         .DeadSign {
             font-size: 0.8em;
-            right: 9vw;
+            right: 0;
         }
     }   
+}
+@media (max-width: 390px) {
+    .HeaderBox {
+        height: 11rem;
+    }
 }

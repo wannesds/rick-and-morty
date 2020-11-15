@@ -60,16 +60,24 @@ form {
 }
 
 select {
+    @include browser-fix(appearance, none);
     @include default-ui;
-    border-radius: 0;
     text-align: center;
     margin: auto;
-    -o-appearance: none;
-    -webkit-appearance: none;
+    width: 4.3em;
+    border-radius: 0;
+    background-image: url(../arrow-doubledropdown.png);
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    background-position: 3.2em 0.5em;
+    &:last-of-type {
+        background-position: 2.6em 0.5em;
+        width: 4.1em;
+    }
 }
 
 
-input {
+input { //[BUG]ios still makes right corners round :C 
     @include default-ui;
     @include browser-fix(border-top-right-radius, 0);
     @include browser-fix(border-bottom-right-radius, 0);  
@@ -205,16 +213,15 @@ content {
             margin-top: auto;
             margin-bottom: 0;
             font-size: 0.8em;
-            // background-color:rgba(9, 255, 0, 0.123);
+            background-color:rgba(9, 255, 0, 0.123);
 
 
             i { //location
-                width: 22em - 9em;
                 color: $color2;
                 font-size: 1.1em;
                 margin-left:0.4em;
                 margin-top: 0.1em;
-                // background-color:rgba(0, 255, 221, 0.171);
+                background-color:rgba(0, 255, 221, 0.171);
 
             }
         }
