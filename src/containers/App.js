@@ -62,7 +62,7 @@ function App() {
               info={data.info}
               url={url}
             />
-
+            <div className="Stretch"/>
           </content> }
         
       <Footer/>
