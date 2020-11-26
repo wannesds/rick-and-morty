@@ -10,14 +10,17 @@
     min-height: 100vh;
 }
 
-.HeaderBox {
-    height: 4.5rem;
-    padding: 0.5rem;
+header {
+    height: auto;
+    padding-bottom: 0.8rem;
+    padding-top: 0.6rem;
     padding-left: 1rem;
     background-color: $colorDark;
+    display:flex;
+    justify-content: space-around;
     h1 {
         font-size: 2.5em;
-        margin:auto;
+        margin: auto;
         color: $color5;
         text-align: center;
         font-family: $font1;
@@ -126,9 +129,13 @@ content {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // min-height: 38rem;
-    // min-height: 90vh;
     height:auto;
+    // min-height: 38rem;
+    min-height: 77vh;
+
+    .Stretch {
+        flex-grow: 1;
+    }
 }
 
 .ChangePageBox {
@@ -136,6 +143,7 @@ content {
     width: 16em;
     display:flex;
     justify-content: space-evenly;
+    
 
     button {
         @include default-ui;
@@ -281,7 +289,8 @@ content {
     background-color: $colorDark;
     width: 100%;
     padding: 1rem;
-    margin-top: 0;
+    margin-top: auto;
+    margin-bottom: 0;
     align-self: flex-end;
     position: absolute;
 }
